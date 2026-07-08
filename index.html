@@ -1,0 +1,990 @@
+<!-- Dossier de curaduría para bar de rock en Lima -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El Setlist — Curaduría para bar de rock (Lima)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wine:#160b12;
+    --wine2:#1f0f1a;
+    --panel:#271426;
+    --panel2:#301930;
+    --line:#43263f;
+    --gold:#f0b24a;
+    --gold-soft:#e8a13c;
+    --mag:#ff4d8d;
+    --mag-soft:#e8477e;
+    --cream:#f5ece2;
+    --muted:#b199a7;
+    --muted2:#8b7385;
+    --green:#5fd6a4;
+    --red:#ff6b6b;
+    --disp:'Bebas Neue',Impact,sans-serif;
+    --body:'Inter',system-ui,sans-serif;
+    --mono:'Space Mono',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:
+      radial-gradient(1200px 600px at 80% -10%, #3a1730 0%, transparent 60%),
+      radial-gradient(900px 500px at -10% 20%, #2a0f26 0%, transparent 55%),
+      var(--wine);
+    color:var(--cream);font-family:var(--body);line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+  /* ---------- Header / marquee ---------- */
+  header{padding:46px 0 28px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin:0 0 10px}
+  .marquee{
+    font-family:var(--disp);line-height:.9;letter-spacing:.01em;margin:0;
+    font-size:clamp(52px,11vw,128px);
+    background:linear-gradient(180deg,var(--cream) 0%, #f7d9a6 55%, var(--gold) 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    text-shadow:0 0 40px rgba(240,178,74,.15);
+  }
+  .marquee .mag{background:linear-gradient(180deg,#ffd0e1,#ff4d8d);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .subtitle{max-width:640px;color:var(--muted);font-size:16px;margin:16px 0 0}
+  .subtitle b{color:var(--cream);font-weight:600}
+  .bulbs{position:absolute;top:18px;right:20px;display:flex;gap:9px}
+  .bulb{width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);opacity:.85;animation:blink 2.4s infinite}
+  .bulb:nth-child(2){background:var(--mag);box-shadow:0 0 10px var(--mag);animation-delay:.4s}
+  .bulb:nth-child(3){animation-delay:.8s}
+  .bulb:nth-child(4){background:var(--mag);box-shadow:0 0 10px var(--mag);animation-delay:1.2s}
+  @keyframes blink{0%,100%{opacity:.9}50%{opacity:.25}}
+
+  /* ---------- Nav ---------- */
+  nav.tabs{position:sticky;top:0;z-index:20;background:rgba(22,11,18,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .tabs .wrap{display:flex;gap:6px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+  .tab{
+    appearance:none;border:1px solid transparent;background:transparent;color:var(--muted);
+    font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;
+    padding:9px 14px;border-radius:999px;cursor:pointer;transition:.18s;
+  }
+  .tab:hover{color:var(--cream);border-color:var(--line)}
+  .tab.active{color:var(--wine);background:var(--gold);border-color:var(--gold);font-weight:700}
+
+  section.view{display:none;padding:38px 0 70px}
+  section.view.active{display:block;animation:fade .3s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  h2.sec{font-family:var(--disp);font-size:clamp(30px,5vw,46px);letter-spacing:.02em;margin:0 0 6px;color:var(--cream)}
+  .sec-sub{color:var(--muted);margin:0 0 26px;max-width:720px}
+
+  /* ---------- Patrones ---------- */
+  .lead{font-size:18px;color:var(--cream);max-width:760px;border-left:3px solid var(--mag);padding-left:18px;margin:0 0 34px}
+  .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-bottom:34px}
+  .pcard{background:linear-gradient(180deg,var(--panel),var(--wine2));border:1px solid var(--line);border-radius:14px;padding:22px}
+  .pcard h3{font-family:var(--disp);letter-spacing:.03em;font-size:24px;margin:0 0 4px;color:var(--gold)}
+  .pcard .num{font-family:var(--mono);color:var(--mag);font-size:12px;letter-spacing:.1em}
+  .pcard p{margin:8px 0 0;color:var(--cream);font-size:14.5px}
+  .pcard p.small{color:var(--muted);font-size:13px}
+  .stat{font-family:var(--disp);font-size:40px;color:var(--cream);line-height:1;letter-spacing:.02em}
+  .stat .u{font-family:var(--mono);font-size:13px;color:var(--muted);letter-spacing:.05em}
+
+  .rules{background:linear-gradient(135deg,#2a0f26,#1c0c1f);border:1px solid var(--line);border-radius:16px;padding:26px 26px 8px;margin-bottom:34px}
+  .rules h3{font-family:var(--disp);font-size:26px;color:var(--mag);margin:0 0 14px;letter-spacing:.03em}
+  .rules ol{margin:0;padding:0;counter-reset:r;list-style:none}
+  .rules li{counter-increment:r;padding:11px 0 11px 46px;position:relative;border-top:1px solid var(--line);font-size:14.5px}
+  .rules li:first-child{border-top:none}
+  .rules li::before{content:counter(r,decimal-leading-zero);position:absolute;left:0;top:10px;font-family:var(--mono);color:var(--gold);font-size:13px;font-weight:700}
+  .rules li b{color:var(--cream)}
+
+  .flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:12px}
+  .flowstep{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+  .flowstep .t{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--mag);text-transform:uppercase}
+  .flowstep .h{font-family:var(--disp);font-size:22px;color:var(--gold);letter-spacing:.02em;margin:4px 0}
+  .flowstep .d{font-size:12.5px;color:var(--muted)}
+
+  /* ---------- Perfiles ---------- */
+  .pf-controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px;align-items:center}
+  .pf-controls input{flex:1;min-width:200px;background:var(--panel);border:1px solid var(--line);color:var(--cream);padding:11px 14px;border-radius:10px;font-family:var(--body);font-size:14px}
+  .pf-controls input::placeholder{color:var(--muted2)}
+  .chip{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--muted);cursor:pointer;transition:.15s}
+  .chip:hover{color:var(--cream)}
+  .chip.on{background:var(--mag);border-color:var(--mag);color:#fff;font-weight:700}
+
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:18px}
+  .card{background:linear-gradient(180deg,var(--panel),var(--wine2));border:1px solid var(--line);border-radius:16px;padding:20px;position:relative;overflow:hidden;transition:.2s}
+  .card:hover{border-color:var(--gold);transform:translateY(-2px)}
+  .card .top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:2px}
+  .card .name{font-family:var(--disp);font-size:29px;letter-spacing:.02em;line-height:1;color:var(--cream)}
+  .card .genre{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-top:4px}
+  .score{font-family:var(--disp);font-size:34px;line-height:.8;color:var(--gold);text-align:right}
+  .score .max{font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .tier-tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:6px;margin:10px 0 12px;font-weight:700}
+  .t-imp{background:var(--gold);color:var(--wine)}
+  .t-muy{background:var(--mag);color:#fff}
+  .t-prob{background:#6b4bd6;color:#fff}
+  .t-mom{background:#2c6e8f;color:#fff}
+  .t-evit{background:#5a2b2b;color:#ffb4b4}
+  .rows{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:13px;margin-top:2px}
+  .rows .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);padding-top:2px;white-space:nowrap}
+  .rows .v{color:var(--cream)}
+  .rows .v em{color:var(--gold);font-style:normal;font-weight:600}
+  .metaline{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+  .pill{font-family:var(--mono);font-size:10.5px;letter-spacing:.03em;padding:4px 9px;border-radius:999px;background:var(--panel2);border:1px solid var(--line);color:var(--muted)}
+  .pill b{color:var(--cream);font-weight:700}
+  .pill.risk-bajo b{color:var(--green)}
+  .pill.risk-medio b{color:var(--gold)}
+  .pill.risk-alto b{color:var(--red)}
+
+  /* ---------- Biblioteca ---------- */
+  .console{background:linear-gradient(135deg,#2a0f26,#180a1c);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:18px;position:sticky;top:52px;z-index:15}
+  .console .row1{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+  .console input.search{flex:1;min-width:180px;background:var(--wine);border:1px solid var(--line);color:var(--cream);padding:11px 14px;border-radius:10px;font-size:14px}
+  .console input.search::placeholder{color:var(--muted2)}
+  .console select{background:var(--wine);border:1px solid var(--line);color:var(--cream);padding:10px 12px;border-radius:10px;font-family:var(--mono);font-size:12px}
+  .count{font-family:var(--mono);font-size:12px;color:var(--gold);white-space:nowrap}
+  .btn-reset{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;background:transparent;border:1px solid var(--line);color:var(--muted);padding:9px 12px;border-radius:10px;cursor:pointer}
+  .btn-reset:hover{color:var(--cream);border-color:var(--mag)}
+  .tierfilter{display:flex;gap:6px;flex-wrap:wrap}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  thead th{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);position:sticky;top:0}
+  tbody td{padding:11px 12px;border-bottom:1px solid rgba(67,38,63,.5);vertical-align:top}
+  tbody tr:hover{background:rgba(255,77,141,.06)}
+  td.artist{font-weight:600;color:var(--cream)}
+  td.song{color:var(--muted);font-style:italic}
+  .dot{display:inline-block;width:34px;height:22px;line-height:22px;text-align:center;border-radius:6px;font-family:var(--mono);font-weight:700;font-size:12px}
+  .badge{font-family:var(--mono);font-size:10px;letter-spacing:.04em;text-transform:uppercase;padding:3px 7px;border-radius:5px;font-weight:700;white-space:nowrap}
+  .sd-canto{color:var(--gold)}
+  .sd-baile{color:var(--mag)}
+  .sd-ambos{color:var(--cream)}
+  .empty{text-align:center;color:var(--muted);padding:40px;font-family:var(--mono);font-size:13px}
+
+  footer{border-top:1px solid var(--line);padding:26px 0 50px;color:var(--muted2);font-size:12.5px;font-family:var(--mono)}
+  @media(max-width:640px){
+    .console{position:static}
+    thead{display:none}
+    tbody td{display:block;border:none;padding:3px 0}
+    tbody tr{display:block;border-bottom:1px solid var(--line);padding:12px 0}
+    td.artist{font-size:16px}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<header>
+  <div class="wrap">
+    <div class="bulbs"><span class="bulb"></span><span class="bulb"></span><span class="bulb"></span><span class="bulb"></span></div>
+    <p class="eyebrow">Curaduría musical · bar de rock · Lima, Perú</p>
+    <h1 class="marquee">EL <span class="mag">SETLIST</span></h1>
+    <p class="subtitle">Un sistema de programación pensado para <b>un bar donde se conversa, se brinda y se canta</b> — no para una disco ni un concierto. La meta: energía constante, actitud y estética, sin caer en la playlist obvia de rock en español. <b>60 perfiles</b> analizados y <b>una biblioteca de ~300 artistas</b> ordenada por comportamiento real del público, no por fama.</p>
+  </div>
+</header>
+
+<nav class="tabs">
+  <div class="wrap">
+    <button class="tab active" data-view="patrones">Patrones detectados</button>
+    <button class="tab" data-view="perfiles">Perfiles (60)</button>
+    <button class="tab" data-view="biblioteca">Biblioteca · 300</button>
+  </div>
+</nav>
+
+<!-- ============ PATRONES ============ -->
+<section class="view active" id="patrones">
+  <div class="wrap">
+    <h2 class="sec">La física de tu pista</h2>
+    <p class="lead">Tu público no responde al “buen gusto” ni a la profundidad de catálogo. Responde al <b>reconocimiento</b>. La canción no tiene que ser conocida por su época: tiene que tener un anzuelo que sobreviva aunque nadie sepa la letra completa. Todo lo demás se deriva de ahí.</p>
+
+    <div class="pgrid">
+      <div class="pcard">
+        <span class="num">PATRÓN 01 · TEMPO</span>
+        <h3>El bolsillo de los 115–132</h3>
+        <p><span class="stat">115–132<span class="u"> BPM</span></span></p>
+        <p>La mayoría de tus ganadores viven ahí: <em>Personal Jesus</em> (123), <em>Just Can’t Get Enough</em> (124), <em>You Spin Me Round</em> (~130), <em>Rebel Yell</em> (130), <em>Song 2</em> (132), <em>Somebody Told Me</em> (138 lo estira). Es rápido para mover el pie, lento para seguir hablando.</p>
+        <p class="small">Excepciones sagradas: los himnos lentos coreables (<em>Zombie</em> ~85, <em>Wonderwall</em> ~87, <em>Bring Me To Life</em> ~95) funcionan como picos comunitarios, no como relleno.</p>
+      </div>
+      <div class="pcard">
+        <span class="num">PATRÓN 02 · DÉCADAS</span>
+        <h3>Dos motores + un puente</h3>
+        <p>Los <b>80</b> (new wave / synth / glam) y los <b>90</b> (grunge / britpop / alt) son la columna vertebral. El puente hacia el público joven son los <b>2000s</b>: indie/dance-rock (Strokes, Killers, Franz Ferdinand) y emo/pop-punk (MCR, Green Day, Paramore).</p>
+        <p class="small">El clásico de los 70 sirve de textura y de pico nostálgico, no de base.</p>
+      </div>
+      <div class="pcard">
+        <span class="num">PATRÓN 03 · VOZ</span>
+        <h3>Personalidad &gt; perfección</h3>
+        <p>Ganan las voces con <b>carácter reconocible al instante</b>: teatrales y masculinas (Bowie, Idol, Gahan, Brandon Flowers, Liam Gallagher) y potentes femeninas (Amy Lee, Debbie Harry, Gwen Stefani, Dolores O’Riordan, Shirley Manson).</p>
+        <p class="small">Una voz “bonita” pero anónima no genera reacción. El timbre tiene que ser un logo.</p>
+      </div>
+      <div class="pcard">
+        <span class="num">PATRÓN 04 · NOSTALGIA</span>
+        <h3>Nostalgia prestada</h3>
+        <p>La nostalgia pesa <b>muchísimo</b>, pero ya no es solo generacional. La Gen Z reconoce temas de los 80 por <em>Shrek</em>, Guitar Hero, sincronías de TikTok, series y memes. <b>El reconocimiento viaja sin la época.</b></p>
+        <p class="small">Por eso <em>All Star</em>, <em>Take On Me</em> o <em>Running Up That Hill</em> revientan en un público de 22 años.</p>
+      </div>
+      <div class="pcard">
+        <span class="num">PATRÓN 05 · ESTRUCTURA</span>
+        <h3>Anzuelo en 15 segundos</h3>
+        <p>El ADN común: <b>un hook de sintetizador o un riff que identifica el tema antes del primer verso</b>, groove de medio tiempo y un coro anthem. Verso–pre–CORO GIGANTE, repetido pronto.</p>
+        <p class="small">Si el tema tarda un minuto en “abrir”, no es de bar: es de audífonos.</p>
+      </div>
+      <div class="pcard">
+        <span class="num">PATRÓN 06 · ESTÉTICA</span>
+        <h3>La imagen es parte del sonido</h3>
+        <p>Tus mejores artistas tienen <b>una estética que la gente puede citar</b>: el glam de Bowie, el cuero de Idol, el eyeliner de MCR, el traje del synthpop. Eso es lo que separa “rock con personalidad” de “rock genérico”.</p>
+        <p class="small">Vende identidad visual, no solo decibeles.</p>
+      </div>
+    </div>
+
+    <div class="rules">
+      <h3>Reglas de oro de la cabina</h3>
+      <ol>
+        <li><b>Reconocimiento antes que profundidad.</b> Un B-side genial de una banda desconocida rinde menos que el hit obvio de una banda con actitud. Guarda las joyas para cuando ya te ganaste a la pista.</li>
+        <li><b>Nunca dos lentas seguidas.</b> Los himnos coreables (Wonderwall, Zombie) son oro, pero encadenados vacían la barra. Uno cada 4–5 temas, como clímax.</li>
+        <li><b>El metal y el punk duro bajan tu energía específica.</b> No porque sean “malos”, sino porque cortan la conversación y espantan a la mitad de 25–45. Úsalos como acento de 1 tema, nunca como bloque.</li>
+        <li><b>Reduce el rock en español obvio, no lo elimines.</b> Soda, Los Prisioneros y Pedro Suárez-Vértiz siguen siendo detonantes locales; el problema es Maná/Enanitos en repeat. Reemplaza cantidad por precisión.</li>
+        <li><b>Sube por escalones, no por saltos.</b> Un salto de synthpop suave a grunge pesado se siente como frenazo. Puentea por BPM y por energía, no por género.</li>
+        <li><b>Cierra con himno, no con lo más pesado.</b> La última hora quiere catarsis coral (Mr. Brightside, Bohemian Rhapsody, Don’t Look Back in Anger), no el tema más duro.</li>
+      </ol>
+    </div>
+
+    <h2 class="sec" style="font-size:32px">Arco de una noche</h2>
+    <p class="sec-sub">Cómo se traduce todo esto en el reloj. Cada perfil y cada fila de la biblioteca trae su “momento ideal”.</p>
+    <div class="flow">
+      <div class="flowstep"><div class="t">Apertura</div><div class="h">Calienta</div><div class="d">Synthpop y new wave elegante. Groove medio, volumen conversacional. Blondie, Tears for Fears, The Cars.</div></div>
+      <div class="flowstep"><div class="t">Construcción</div><div class="h">Engancha</div><div class="d">Britpop e indie 2000s. Empieza el coreo. Oasis, The Killers, Franz Ferdinand.</div></div>
+      <div class="flowstep"><div class="t">Pico</div><div class="h">Estalla</div><div class="d">Actitud y coros gigantes. Nirvana, Billy Idol, Green Day, Dead or Alive.</div></div>
+      <div class="flowstep"><div class="t">Coreable</div><div class="h">Une</div><div class="d">Himno lento comunitario. Zombie, Wonderwall, Bring Me To Life. Una sola, como respiro.</div></div>
+      <div class="flowstep"><div class="t">Cierre</div><div class="h">Catarsis</div><div class="d">El anthem final. Mr. Brightside, Bohemian Rhapsody, Don’t Look Back in Anger.</div></div>
+    </div>
+    <p class="sec-sub" style="margin-top:14px">Los <b>comodines</b> (Queen, Killers, Depeche Mode) entran en casi cualquier momento: son tu red de seguridad cuando sientes que la pista se enfría.</p>
+  </div>
+</section>
+
+<!-- ============ PERFILES ============ -->
+<section class="view" id="perfiles">
+  <div class="wrap">
+    <h2 class="sec">60 perfiles de cabina</h2>
+    <p class="sec-sub">Los 16 que ya te funcionan + los 44 que pediste explorar. Cada ficha trae compatibilidad (1–10), probabilidad en Lima, imprescindibles, joya escondida, momento, con quién mezcla, riesgo de enfriar, generación y si genera más canto o baile.</p>
+    <div class="pf-controls">
+      <input id="pfSearch" placeholder="Buscar artista…" autocomplete="off">
+      <button class="chip on" data-pf="all">Todos</button>
+      <button class="chip" data-pf="Imprescindible">Imprescindibles</button>
+      <button class="chip" data-pf="Muy recomendable">Muy recom.</button>
+      <button class="chip" data-pf="Para probar">Para probar</button>
+      <button class="chip" data-pf="Momentos">Momentos</button>
+    </div>
+    <div class="cards" id="pfCards"></div>
+    <p class="empty" id="pfEmpty" style="display:none">Ningún artista con ese nombre en los perfiles. Probá en la Biblioteca de 300.</p>
+  </div>
+</section>
+
+<!-- ============ BIBLIOTECA ============ -->
+<section class="view" id="biblioteca">
+  <div class="wrap">
+    <h2 class="sec">La biblioteca · ~300 artistas</h2>
+    <p class="sec-sub">Ordenada por prioridad real (tier), no por fama. Filtrá por tier, momento de la noche, canto/baile o género. Click en “Compat.” para reordenar.</p>
+    <div class="console">
+      <div class="row1">
+        <input class="search" id="libSearch" placeholder="Buscar artista, canción o género…" autocomplete="off">
+        <select id="libMoment"><option value="">Momento (todos)</option></select>
+        <select id="libSD"><option value="">Canto/Baile (todos)</option><option>Canto</option><option>Baile</option><option>Ambos</option></select>
+        <select id="libGenre"><option value="">Género (todos)</option></select>
+        <button class="btn-reset" id="libReset">Limpiar</button>
+        <span class="count" id="libCount"></span>
+      </div>
+      <div class="tierfilter" id="libTiers">
+        <button class="chip on" data-tier="all">Todos los tiers</button>
+        <button class="chip" data-tier="Imprescindible">Imprescindible</button>
+        <button class="chip" data-tier="Muy recomendable">Muy recom.</button>
+        <button class="chip" data-tier="Para probar">Para probar</button>
+        <button class="chip" data-tier="Momentos">Momentos</button>
+        <button class="chip" data-tier="Evitar">Evitar</button>
+      </div>
+    </div>
+    <table>
+      <thead><tr>
+        <th style="width:36px">#</th>
+        <th>Artista</th>
+        <th style="width:58px;cursor:pointer" id="sortC">Compat ▾</th>
+        <th>Tier</th>
+        <th>Momento</th>
+        <th>C/B</th>
+        <th>Género</th>
+        <th>Canción ancla</th>
+        <th>Nota</th>
+      </tr></thead>
+      <tbody id="libBody"></tbody>
+    </table>
+    <p class="empty" id="libEmpty" style="display:none">Sin resultados con esos filtros.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">EL SETLIST · dossier de curaduría v1 · compatibilidad estimada para un bar de conversación 25–45 en Lima · las canciones son puntos de partida, la pista manda.</div>
+</footer>
+
+<script>
+/* ================= PERFILES (60) ================= */
+const PROFILES = [
+/* ---- PROBADOS ---- */
+{n:"Depeche Mode",tier:"Imprescindible",c:10,lima:"Altísima",genre:"Synth Rock / Dark Wave",
+ must:["Personal Jesus","Enjoy the Silence","Just Can’t Get Enough"],gem:"Never Let Me Down Again",
+ moment:"Comodín — abre, construye y da pico por igual",mix:["The Cure","New Order","Soft Cell","Billy Idol"],
+ risk:"bajo",gen:"Gen X + Millennial (culto)",sd:"Ambos"},
+{n:"The Killers",tier:"Imprescindible",c:10,lima:"Altísima",genre:"Dance Rock / Indie 2000s",
+ must:["Mr. Brightside","Somebody Told Me","When You Were Young"],gem:"Read My Mind",
+ moment:"Cierre / pico — Mr. Brightside es tu himno de las 2am",mix:["Franz Ferdinand","The Strokes","Interpol","Muse"],
+ risk:"bajo",gen:"Millennial (transgeneracional)",sd:"Ambos"},
+{n:"Human League",tier:"Imprescindible",c:9,lima:"Alta",genre:"Synthpop / New Wave",
+ must:["Don’t You Want Me","Human"],gem:"(Keep Feeling) Fascination",
+ moment:"Apertura y media noche — synthpop elegante y coreable",mix:["Soft Cell","Erasure","Pet Shop Boys","Blondie"],
+ risk:"bajo",gen:"Gen X (pero coro universal)",sd:"Ambos"},
+{n:"Blondie",tier:"Imprescindible",c:10,lima:"Altísima",genre:"New Wave / Power Pop",
+ must:["Heart of Glass","Call Me","One Way or Another"],gem:"Atomic",
+ moment:"Apertura elegante y pico bailable",mix:["Pat Benatar","The Cars","Talking Heads","Garbage"],
+ risk:"bajo",gen:"Transgeneracional",sd:"Ambos"},
+{n:"Oasis",tier:"Imprescindible",c:10,lima:"Altísima",genre:"Britpop",
+ must:["Wonderwall","Don’t Look Back in Anger","Champagne Supernova"],gem:"Some Might Say",
+ moment:"Coreable / cierre — himnos de brazos al aire",mix:["Blur","The Verve","Stone Roses","The Cranberries"],
+ risk:"bajo",gen:"Millennial + Gen X",sd:"Canto"},
+{n:"Nirvana",tier:"Imprescindible",c:9,lima:"Alta",genre:"Grunge",
+ must:["Smells Like Teen Spirit","Come As You Are","Heart-Shaped Box"],gem:"In Bloom",
+ moment:"Pico — sube adrenalina sin volverse metal",mix:["STP","Foo Fighters","Bush","Hole"],
+ risk:"medio",gen:"Gen X + Millennial",sd:"Canto"},
+{n:"Red Hot Chili Peppers",tier:"Imprescindible",c:9,lima:"Alta",genre:"Funk Rock / Alt",
+ must:["Otherside","Californication","Can’t Stop"],gem:"Dani California",
+ moment:"Construcción — groove que mantiene la temperatura",mix:["Foo Fighters","Incubus","Jane’s Addiction","STP"],
+ risk:"bajo",gen:"Millennial",sd:"Ambos"},
+{n:"Evanescence",tier:"Imprescindible",c:9,lima:"Alta",genre:"Gothic Rock accesible",
+ must:["Bring Me To Life","My Immortal (fast)"],gem:"Going Under",
+ moment:"Coreable / pico dramático — Bring Me To Life es catarsis garantizada",mix:["Garbage","Placebo","Within Temptation","Muse"],
+ risk:"medio",gen:"Millennial (nostalgia MTV)",sd:"Canto"},
+{n:"Queen",tier:"Imprescindible",c:10,lima:"Altísima",genre:"Glam / Arena Rock",
+ must:["Bohemian Rhapsody","Don’t Stop Me Now","Somebody to Love"],gem:"Fat Bottomed Girls",
+ moment:"Comodín absoluto — cierre coral perfecto",mix:["David Bowie","KISS","Journey","The Darkness"],
+ risk:"bajo",gen:"Transgeneracional total",sd:"Canto"},
+{n:"Billy Idol",tier:"Imprescindible",c:10,lima:"Alta",genre:"Glam Punk / New Wave",
+ must:["Rebel Yell","White Wedding","Dancing With Myself"],gem:"Flesh for Fantasy",
+ moment:"Pico — actitud pura, sneer y coro",mix:["Bowie","Joan Jett","The Cult","Depeche Mode"],
+ risk:"bajo",gen:"Gen X + Millennial",sd:"Ambos"},
+{n:"David Bowie",tier:"Imprescindible",c:9,lima:"Alta",genre:"Glam Rock",
+ must:["Let’s Dance","Rebel Rebel","Heroes"],gem:"Ashes to Ashes",
+ moment:"Comodín elegante — Let’s Dance para bailar, Heroes para el clímax",mix:["Queen","Roxy Music","Billy Idol","Duran Duran"],
+ risk:"bajo",gen:"Transgeneracional",sd:"Ambos"},
+{n:"Dead or Alive",tier:"Imprescindible",c:9,lima:"Alta",genre:"Hi-NRG / New Wave",
+ must:["You Spin Me Round (Like a Record)"],gem:"Brand New Lover",
+ moment:"Pico bailable — un tema, efecto bomba",mix:["Soft Cell","Erasure","Pet Shop Boys","Frankie Goes to Hollywood"],
+ risk:"bajo",gen:"Transgeneracional (meme)",sd:"Baile"},
+{n:"KISS",tier:"Muy recomendable",c:8,lima:"Alta",genre:"Glam / Arena Rock",
+ must:["I Was Made for Lovin’ You","Rock and Roll All Nite"],gem:"Detroit Rock City",
+ moment:"Pico — I Was Made… es disco-rock puro para la pista",mix:["Queen","Poison","The Darkness","Alice Cooper"],
+ risk:"bajo",gen:"Gen X + Millennial",sd:"Ambos"},
+{n:"Smash Mouth",tier:"Muy recomendable",c:9,lima:"Alta",genre:"Power Pop / Ska-punk",
+ must:["All Star","Walkin’ on the Sun"],gem:"Then the Morning Comes",
+ moment:"Pico divertido — All Star es meme y catarsis a la vez",mix:["Green Day","Sugar Ray","No Doubt","Fastball"],
+ risk:"bajo",gen:"Millennial + Gen Z (Shrek)",sd:"Canto"},
+{n:"Green Day",tier:"Imprescindible",c:10,lima:"Altísima",genre:"Pop Punk",
+ must:["Basket Case","American Idiot","When I Come Around"],gem:"Longview",
+ moment:"Pico — energía y coro sin volverse metal",mix:["My Chemical Romance","The Offspring","Blink-182","Weezer"],
+ risk:"bajo",gen:"Millennial (transgeneracional)",sd:"Canto"},
+{n:"My Chemical Romance",tier:"Imprescindible",c:9,lima:"Alta",genre:"Emo / Post-Hardcore accesible",
+ must:["Welcome to the Black Parade","Teenagers","Helena"],gem:"I’m Not Okay (I Promise)",
+ moment:"Coreable / pico teatral — Black Parade es un himno generacional",mix:["Green Day","Paramore","Panic! at the Disco","Fall Out Boy"],
+ risk:"medio",gen:"Millennial + Gen Z (TikTok)",sd:"Canto"},
+/* ---- EXPLORAR ---- */
+{n:"The Cure",tier:"Imprescindible",c:9,lima:"Alta",genre:"Post Punk / Gothic Rock accesible",
+ must:["Friday I’m in Love","Just Like Heaven","Boys Don’t Cry"],gem:"In Between Days",
+ moment:"Apertura y construcción — luminoso y coreable",mix:["Depeche Mode","New Order","Echo & The Bunnymen","The Smiths"],
+ risk:"bajo",gen:"Gen X + Millennial (revival)",sd:"Ambos"},
+{n:"INXS",tier:"Imprescindible",c:9,lima:"Alta",genre:"New Wave / Dance Rock",
+ must:["Need You Tonight","Never Tear Us Apart","New Sensation"],gem:"Suicide Blonde",
+ moment:"Construcción — groove sexy de medio tiempo",mix:["Duran Duran","Simple Minds","INXS","The Cars"],
+ risk:"bajo",gen:"Gen X + Millennial",sd:"Ambos"},
+{n:"Tears for Fears",tier:"Imprescindible",c:9,lima:"Alta",genre:"New Wave / Synthpop",
+ must:["Everybody Wants to Rule the World","Shout","Head Over Heels"],gem:"Mad World (original)",
+ moment:"Apertura elegante — Everybody Wants… es universal y cinematográfica",mix:["Simple Minds","A-ha","Duran Duran","OMD"],
+ risk:"bajo",gen:"Transgeneracional (Gen Z por sincronías)",sd:"Ambos"},
+{n:"New Order",tier:"Imprescindible",c:9,lima:"Alta",genre:"Dance Rock / New Wave",
+ must:["Blue Monday","Bizarre Love Triangle","Temptation"],gem:"True Faith",
+ moment:"Pico bailable — el puente perfecto entre rock y pista",mix:["Depeche Mode","New Order","Pet Shop Boys","The Cure"],
+ risk:"bajo",gen:"Gen X + Millennial",sd:"Baile"},
+{n:"Duran Duran",tier:"Imprescindible",c:9,lima:"Alta",genre:"New Wave / Synth Rock",
+ must:["Hungry Like the Wolf","Rio","The Reflex"],gem:"Notorious",
+ moment:"Construcción glam — estética MTV pura",mix:["INXS","Roxy Music","Duran Duran","Simple Minds"],
+ risk:"bajo",gen:"Gen X + Millennial",sd:"Ambos"},
+{n:"Pet Shop Boys",tier:"Muy recomendable",c:8,lima:"Media-alta",genre:"Synthpop",
+ must:["West End Girls","It’s a Sin","Go West"],gem:"Domino Dancing",
+ moment:"Pico bailable elegante — Go West es coro de estadio",mix:["Erasure","New Order","Human League","Soft Cell"],
+ risk:"bajo",gen:"Gen X (coro universal)",sd:"Baile"},
+{n:"Erasure",tier:"Muy recomendable",c:8,lima:"Media-alta",genre:"Synthpop",
+ must:["A Little Respect","Always"],gem:"Sometimes",
+ moment:"Coreable — A Little Respect levanta las manos",mix:["Pet Shop Boys","Human League","Erasure","Yazoo"],
+ risk:"bajo",gen:"Gen X + Millennial (memes)",sd:"Canto"},
+{n:"A-ha",tier:"Imprescindible",c:9,lima:"Alta",genre:"Synthpop / New Wave",
+ must:["Take On Me","The Sun Always Shines on T.V."],gem:"Hunting High and Low",
+ moment:"Pico coreable — Take On Me es reconocimiento instantáneo, incluso Gen Z",mix:["Tears for Fears","Duran Duran","A-ha","Simple Minds"],
+ risk:"bajo",gen:"Transgeneracional (meme total)",sd:"Canto"},
+{n:"Soft Cell",tier:"Muy recomendable",c:8,lima:"Media-alta",genre:"Synthpop / New Wave",
+ must:["Tainted Love"],gem:"Bedsitter",
+ moment:"Construcción — Tainted Love es reconocible al primer beat",mix:["Human League","Depeche Mode","Dead or Alive","Yazoo"],
+ risk:"bajo",gen:"Transgeneracional",sd:"Ambos"},
+{n:"Eurythmics",tier:"Imprescindible",c:9,lima:"Alta",genre:"Synthpop / New Wave",
+ must:["Sweet Dreams (Are Made of This)","Here Comes the Rain Again"],gem:"Would I Lie to You?",
+ moment:"Pico oscuro y elegante — Sweet Dreams hipnotiza",mix:["Depeche Mode","Blondie","Annie Lennox","Garbage"],
+ risk:"bajo",gen:"Transgeneracional (Marilyn Manson lo revivió)",sd:"Ambos"},
+{n:"Simple Minds",tier:"Muy recomendable",c:8,lima:"Media-alta",genre:"New Wave / Arena",
+ must:["Don’t You (Forget About Me)","Alive and Kicking"],gem:"Someone Somewhere in Summertime",
+ moment:"Coreable — Don’t You… es himno de película (Breakfast Club)",mix:["Tears for Fears","U2","Simple Minds","INXS"],
+ risk:"bajo",gen:"Gen X + Millennial (cine)",sd:"Canto"},
+{n:"Echo & The Bunnymen",tier:"Para probar",c:7,lima:"Media",genre:"Post Punk / New Wave",
+ must:["The Killing Moon","Lips Like Sugar"],gem:"The Cutter",
+ moment:"Apertura atmosférica — clase, no explosión",mix:["The Cure","Psychedelic Furs","Interpol","The Church"],
+ risk:"medio",gen:"Gen X (culto)",sd:"Ambos"},
+{n:"The Psychedelic Furs",tier:"Para probar",c:7,lima:"Media",genre:"Post Punk / New Wave",
+ must:["Pretty in Pink","Love My Way"],gem:"The Ghost in You",
+ moment:"Construcción — Love My Way tuvo revival por series",mix:["Echo & The Bunnymen","The Cure","Simple Minds","INXS"],
+ risk:"medio",gen:"Gen X + Millennial (revival)",sd:"Ambos"},
+{n:"Garbage",tier:"Imprescindible",c:9,lima:"Alta",genre:"Alternative / Dark Wave comercial",
+ must:["Only Happy When It Rains","Stupid Girl","I Think I’m Paranoid"],gem:"Push It",
+ moment:"Pico — Shirley Manson es actitud y groove sucio",mix:["No Doubt","Hole","Republica","Placebo"],
+ risk:"bajo",gen:"Millennial + Gen X",sd:"Ambos"},
+{n:"No Doubt",tier:"Imprescindible",c:9,lima:"Alta",genre:"Ska Punk / Pop Rock",
+ must:["Just a Girl","Don’t Speak","Hella Good"],gem:"Spiderwebs",
+ moment:"Construcción / pico — Gwen Stefani es magnetismo puro",mix:["Garbage","Paramore","Gwen Stefani","Blink-182"],
+ risk:"bajo",gen:"Millennial",sd:"Ambos"},
+{n:"Foo Fighters",tier:"Imprescindible",c:9,lima:"Alta",genre:"Alternative Rock",
+ must:["Everlong","The Pretender","Learn to Fly"],gem:"Monkey Wrench",
+ moment:"Pico — coros de estadio con energía controlada",mix:["Nirvana","Weezer","Queens of the Stone Age","RHCP"],
+ risk:"bajo",gen:"Millennial + Gen X",sd:"Canto"},
+{n:"Live",tier:"Para probar",c:7,lima:"Media",genre:"Alternative Rock 90s",
+ must:["Lightning Crashes","I Alone"],gem:"All Over You",
+ moment:"Coreable dramático — Lightning Crashes es catarsis lenta",mix:["Collective Soul","Bush","Creed","STP"],
+ risk:"medio",gen:"Gen X + Millennial",sd:"Canto"},
+{n:"Collective Soul",tier:"Muy recomendable",c:8,lima:"Media-alta",genre:"Alternative Rock 90s",
+ must:["Shine","The World I Know","December"],gem:"Heavy",
+ moment:"Construcción — riffs cálidos y coreables",mix:["Live","Bush","Gin Blossoms","Foo Fighters"],
+ risk:"bajo",gen:"Millennial + Gen X",sd:"Canto"},
+{n:"Stone Temple Pilots",tier:"Muy recomendable",c:8,lima:"Media-alta",genre:"Grunge / Alt",
+ must:["Interstate Love Song","Plush","Sex Type Thing"],gem:"Vasoline",
+ moment:"Pico — Interstate Love Song tiene groove que canta la barra",mix:["Nirvana","Bush","Foo Fighters","Soundgarden"],
+ risk:"medio",gen:"Gen X + Millennial",sd:"Canto"},
+{n:"The Cranberries",tier:"Imprescindible",c:10,lima:"Altísima",genre:"Alternative / Dream Pop",
+ must:["Zombie","Linger","Dreams"],gem:"Ode to My Family",
+ moment:"Coreable — Zombie es de tus mayores anthems de coro colectivo",mix:["Oasis","The Verve","No Doubt","Cardigans"],
+ risk:"bajo",gen:"Transgeneracional (TikTok)",sd:"Canto"},
+{n:"Placebo",tier:"Muy recomendable",c:8,lima:"Media-alta",genre:"Alt / Glam accesible",
+ must:["Every You Every Me","Pure Morning","Nancy Boy"],gem:"Special K",
+ moment:"Construcción oscura — androginia glam con actitud",mix:["Muse","Garbage","Suede","The Cure"],
+ risk:"medio",gen:"Millennial (culto)",sd:"Ambos"},
+{n:"Muse",tier:"Imprescindible",c:9,lima:"Alta",genre:"Alt / Space Rock",
+ must:["Supermassive Black Hole","Uprising","Starlight"],gem:"Hysteria",
+ moment:"Pico cinematográfico — teatralidad y drama",mix:["The Killers","Placebo","Foo Fighters","Franz Ferdinand"],
+ risk:"medio",gen:"Millennial",sd:"Ambos"},
+{n:"Franz Ferdinand",tier:"Imprescindible",c:9,lima:"Alta",genre:"Dance Punk / Indie 2000s",
+ must:["Take Me Out","Do You Want To","No You Girls"],gem:"The Dark of the Matinée",
+ moment:"Pico bailable — Take Me Out cambia de marcha y explota",mix:["The Killers","Kaiser Chiefs","Bloc Party","The Strokes"],
+ risk:"bajo",gen:"Millennial",sd:"Baile"},
+{n:"Kaiser Chiefs",tier:"Muy recomendable",c:8,lima:"Media-alta",genre:"Indie Rock 2000s / Britpop",
+ must:["Ruby","I Predict a Riot","Never Miss a Beat"],gem:"Everyday I Love You Less and Less",
+ moment:"Pico — Ruby es un coro para gritar",mix:["Franz Ferdinand","Arctic Monkeys","Kaiser Chiefs","The Kooks"],
+ risk:"bajo",gen:"Millennial",sd:"Canto"},
+{n:"Jet",tier:"Muy recomendable",c:8,lima:"Media-alta",genre:"Garage / Hard Rock revival",
+ must:["Are You Gonna Be My Girl","Cold Hard Bitch"],gem:"Look What You’ve Done",
+ moment:"Pico — riff garage reconocible (iPod, Guitar Hero)",mix:["The Vines","The Hives","Wolfmother","The White Stripes"],
+ risk:"bajo",gen:"Millennial (videojuegos)",sd:"Ambos"},
+{n:"The White Stripes",tier:"Imprescindible",c:9,lima:"Alta",genre:"Garage / Blues Rock",
+ must:["Seven Nation Army","Fell in Love with a Girl"],gem:"The Hardest Button to Button",
+ moment:"Pico — Seven Nation Army es un riff-coro universal (estadios)",mix:["The Hives","Jet","The Black Keys","Arctic Monkeys"],
+ risk:"bajo",gen:"Transgeneracional (fútbol/meme)",sd:"Canto"},
+{n:"The Hives",tier:"Muy recomendable",c:8,lima:"Media-alta",genre:"Garage Punk",
+ must:["Hate to Say I Told You So","Tick Tick Boom"],gem:"Walk Idiot Walk",
+ moment:"Pico enérgico — garage con traje, actitud y humor",mix:["The Vines","Jet","The White Stripes","The Strokes"],
+ risk:"medio",gen:"Millennial",sd:"Baile"},
+{n:"The Strokes",tier:"Imprescindible",c:9,lima:"Alta",genre:"Indie / Garage 2000s",
+ must:["Last Nite","Reptilia","Someday"],gem:"You Only Live Once",
+ moment:"Construcción cool — el sonido que define el indie 2000s",mix:["The Killers","Franz Ferdinand","Arctic Monkeys","Interpol"],
+ risk:"bajo",gen:"Millennial (nostalgia núcleo)",sd:"Ambos"},
+{n:"Blur",tier:"Imprescindible",c:9,lima:"Alta",genre:"Britpop",
+ must:["Song 2","Girls & Boys","Coffee & TV"],gem:"There’s No Other Way",
+ moment:"Pico — Song 2 es un ‘woohoo’ que revienta la pista",mix:["Oasis","Pulp","Supergrass","Franz Ferdinand"],
+ risk:"bajo",gen:"Millennial + Gen X (deporte/meme)",sd:"Ambos"},
+{n:"Pulp",tier:"Muy recomendable",c:8,lima:"Media-alta",genre:"Britpop",
+ must:["Common People","Disco 2000"],gem:"Babies",
+ moment:"Coreable — Common People sube capa por capa hasta el grito",mix:["Blur","Suede","Oasis","The Verve"],
+ risk:"bajo",gen:"Gen X + Millennial",sd:"Canto"},
+{n:"Suede",tier:"Para probar",c:7,lima:"Media",genre:"Britpop / Glam",
+ must:["Beautiful Ones","Animal Nitrate"],gem:"Trash",
+ moment:"Construcción glam — dramatismo británico con estética",mix:["Placebo","Pulp","Blur","Bowie"],
+ risk:"medio",gen:"Gen X (culto)",sd:"Ambos"},
+{n:"The Verve",tier:"Muy recomendable",c:8,lima:"Media-alta",genre:"Britpop / Alt",
+ must:["Bitter Sweet Symphony","Lucky Man"],gem:"The Drugs Don’t Work",
+ moment:"Coreable cinematográfico — Bitter Sweet Symphony es puro cine",mix:["Oasis","The Cranberries","Coldplay","Blur"],
+ risk:"bajo",gen:"Millennial + Gen X",sd:"Canto"},
+{n:"The Cardigans",tier:"Muy recomendable",c:8,lima:"Media-alta",genre:"Pop Rock / Indie 90s",
+ must:["Lovefool","My Favourite Game"],gem:"Erase/Rewind",
+ moment:"Apertura dulce con filo — Lovefool es nostalgia MTV",mix:["No Doubt","Garbage","Republica","The Sundays"],
+ risk:"bajo",gen:"Millennial (Romeo+Juliet)",sd:"Ambos"},
+{n:"Republica",tier:"Para probar",c:7,lima:"Media",genre:"Dance Rock / Electronica 90s",
+ must:["Ready to Go"],gem:"Drop Dead Gorgeous",
+ moment:"Pico — Ready to Go es adrenalina publicitaria reconocible",mix:["Garbage","Prodigy (suave)","No Doubt","Republica"],
+ risk:"medio",gen:"Millennial + Gen X",sd:"Baile"},
+{n:"Pat Benatar",tier:"Muy recomendable",c:8,lima:"Media-alta",genre:"New Wave / Rock",
+ must:["Love Is a Battlefield","Heartbreaker","Hit Me with Your Best Shot"],gem:"We Belong",
+ moment:"Pico — voz potente y coros de karaoke",mix:["Blondie","Joan Jett","Heart","Bonnie Tyler"],
+ risk:"bajo",gen:"Gen X + Millennial",sd:"Canto"},
+{n:"Joan Jett",tier:"Imprescindible",c:9,lima:"Alta",genre:"Glam Punk / Rock",
+ must:["I Love Rock ’n’ Roll","Bad Reputation","Crimson and Clover"],gem:"Do You Wanna Touch Me",
+ moment:"Pico — actitud pura, coro de puño arriba",mix:["Billy Idol","Blondie","Pat Benatar","The Runaways"],
+ risk:"bajo",gen:"Transgeneracional",sd:"Canto"},
+{n:"Heart",tier:"Para probar",c:7,lima:"Media",genre:"Soft/Hard Rock",
+ must:["Barracuda","Alone","What About Love"],gem:"Crazy on You",
+ moment:"Coreable / pico — Barracuda tiene riff, Alone es baladón",mix:["Pat Benatar","Journey","Fleetwood Mac","Scorpions"],
+ risk:"medio",gen:"Gen X (Guitar Hero por Barracuda)",sd:"Canto"},
+{n:"Alanis Morissette",tier:"Muy recomendable",c:8,lima:"Media-alta",genre:"Alt Rock 90s",
+ must:["You Oughta Know","Ironic","Hand in My Pocket"],gem:"Head Over Feet",
+ moment:"Coreable catártico — You Oughta Know es descarga de karaoke",mix:["No Doubt","Garbage","Sheryl Crow","The Cranberries"],
+ risk:"bajo",gen:"Millennial",sd:"Canto"},
+{n:"Hole",tier:"Para probar",c:6,lima:"Media-baja",genre:"Grunge / Alt",
+ must:["Celebrity Skin","Malibu"],gem:"Doll Parts",
+ moment:"Pico sucio — Celebrity Skin es el más pop y accesible",mix:["Garbage","Nirvana","Veruca Salt","Bikini Kill"],
+ risk:"medio",gen:"Gen X + Millennial (culto)",sd:"Ambos"},
+{n:"Europe",tier:"Solo en momentos",c:6,lima:"Media (por 1 tema)",genre:"Glam Metal / AOR",
+ must:["The Final Countdown"],gem:"Carrie",
+ moment:"Pico-meme — The Final Countdown como guiño, no como bloque",mix:["Journey","Survivor","Scorpions","Bon Jovi"],
+ risk:"medio",gen:"Transgeneracional (meme)",sd:"Canto"},
+{n:"Journey",tier:"Imprescindible",c:9,lima:"Alta",genre:"AOR / Arena Rock",
+ must:["Don’t Stop Believin’","Any Way You Want It","Separate Ways"],gem:"Wheel in the Sky",
+ moment:"Cierre coral — Don’t Stop Believin’ es himno de karaoke global (Glee/series)",mix:["Queen","Survivor","Bon Jovi","Foreigner"],
+ risk:"bajo",gen:"Transgeneracional (TV)",sd:"Canto"},
+{n:"Poison",tier:"Solo en momentos",c:6,lima:"Media",genre:"Glam Metal",
+ must:["Every Rose Has Its Thorn","Talk Dirty to Me"],gem:"Nothin’ but a Good Time",
+ moment:"Coreable — la balada Every Rose funciona como respiro con encendedores",mix:["Bon Jovi","Def Leppard","Mötley Crüe","Cinderella"],
+ risk:"medio",gen:"Gen X + Millennial",sd:"Canto"},
+{n:"Scorpions",tier:"Solo en momentos",c:6,lima:"Media-alta (por baladas)",genre:"Hard Rock / Metal",
+ must:["Wind of Change","Still Loving You","Rock You Like a Hurricane"],gem:"Send Me an Angel",
+ moment:"Coreable — las baladas son himnos de encendedor en Latinoamérica",mix:["Journey","Europe","Whitesnake","Bon Jovi"],
+ risk:"medio",gen:"Transgeneracional (baladas)",sd:"Canto"},
+{n:"The Darkness",tier:"Muy recomendable",c:8,lima:"Media-alta",genre:"Glam Rock revival",
+ must:["I Believe in a Thing Called Love"],gem:"Growing on Me",
+ moment:"Pico divertido — falsete absurdo, glam autoconsciente, puro show",mix:["Queen","KISS","Def Leppard","Jet"],
+ risk:"bajo",gen:"Millennial",sd:"Canto"}
+];
+
+/* ================= BIBLIOTECA (extras además de los 60 perfiles) ================= */
+/* campos: n nombre, t tier, c compat, m momento, sd canto/baile, g género, gen generación, s canción ancla, note */
+const EXTRA = [
+/* --- Synthpop / New Wave / Post-punk --- */
+{n:"OMD",t:"Muy recomendable",c:8,m:"Apertura",sd:"Ambos",g:"Synthpop",gen:"Gen X",s:"Enola Gay",note:"Melodía synth luminosa; If You Leave por cine ochentero."},
+{n:"Talk Talk",t:"Para probar",c:6,m:"Apertura",sd:"Ambos",g:"New Wave",gen:"Gen X",s:"It’s My Life",note:"Reconocible por el cover de No Doubt."},
+{n:"Ultravox",t:"Para probar",c:6,m:"Apertura",sd:"Canto",g:"New Wave",gen:"Gen X",s:"Vienna",note:"Elegante y dramática; nicho pero clase."},
+{n:"Gary Numan",t:"Para probar",c:6,m:"Construcción",sd:"Baile",g:"Synth / Dark Wave",gen:"Gen X",s:"Cars",note:"Frío y robótico; anzuelo de synth memorable."},
+{n:"Yazoo",t:"Para probar",c:7,m:"Construcción",sd:"Ambos",g:"Synthpop",gen:"Gen X",s:"Situation",note:"Groove synth; Only You como respiro."},
+{n:"Heaven 17",t:"Para probar",c:6,m:"Construcción",sd:"Baile",g:"Synthpop",gen:"Gen X",s:"Temptation",note:"Funk-synth británico infravalorado."},
+{n:"Thompson Twins",t:"Para probar",c:7,m:"Construcción",sd:"Ambos",g:"New Wave",gen:"Gen X",s:"Hold Me Now",note:"Coro cálido y nostálgico."},
+{n:"Howard Jones",t:"Para probar",c:6,m:"Apertura",sd:"Ambos",g:"Synthpop",gen:"Gen X",s:"Things Can Only Get Better",note:"Optimismo synth; buen relleno de calidad."},
+{n:"Spandau Ballet",t:"Muy recomendable",c:7,m:"Coreable",sd:"Canto",g:"New Wave / Blue-eyed soul",gen:"Gen X",s:"True",note:"Baladón coreable; nostalgia total."},
+{n:"ABC",t:"Para probar",c:7,m:"Construcción",sd:"Baile",g:"New Wave / Sophisti-pop",gen:"Gen X",s:"The Look of Love",note:"Elegancia bailable; producción de lujo."},
+{n:"Frankie Goes to Hollywood",t:"Muy recomendable",c:7,m:"Pico",sd:"Baile",g:"Hi-NRG / New Wave",gen:"Gen X",s:"Relax",note:"Bomba de pista; también Two Tribes."},
+{n:"Alphaville",t:"Muy recomendable",c:8,m:"Coreable",sd:"Canto",g:"Synthpop",gen:"Transgeneracional",s:"Forever Young",note:"Himno de encendedor; Big in Japan bailable."},
+{n:"The Fixx",t:"Para probar",c:6,m:"Construcción",sd:"Ambos",g:"New Wave",gen:"Gen X",s:"One Thing Leads to Another",note:"Groove new wave sólido y poco explotado."},
+{n:"Berlin",t:"Para probar",c:6,m:"Coreable",sd:"Canto",g:"New Wave",gen:"Gen X",s:"Take My Breath Away",note:"Balada de Top Gun; respiro romántico."},
+{n:"Modern English",t:"Para probar",c:6,m:"Apertura",sd:"Ambos",g:"New Wave",gen:"Gen X",s:"I Melt with You",note:"Dulce y coreable; muy usada en cine."},
+{n:"Naked Eyes",t:"Para probar",c:5,m:"Apertura",sd:"Ambos",g:"Synthpop",gen:"Gen X",s:"Always Something There to Remind Me",note:"Nicho pero anzuelo pegajoso."},
+{n:"Kajagoogoo",t:"Para probar",c:5,m:"Construcción",sd:"Baile",g:"New Wave",gen:"Gen X",s:"Too Shy",note:"One-hit reconocible; guiño kitsch."},
+{n:"Devo",t:"Muy recomendable",c:7,m:"Pico",sd:"Baile",g:"New Wave / Art Punk",gen:"Transgeneracional",s:"Whip It",note:"Meme visual + hook robótico."},
+{n:"Talking Heads",t:"Imprescindible",c:9,m:"Construcción",sd:"Baile",g:"New Wave / Art Rock",gen:"Transgeneracional",s:"Psycho Killer",note:"Groove nervioso; Once in a Lifetime meme."},
+{n:"Tom Tom Club",t:"Para probar",c:6,m:"Construcción",sd:"Baile",g:"New Wave / Funk",gen:"Gen X",s:"Genius of Love",note:"Groove sampleadísimo; para variar la textura."},
+{n:"The B-52’s",t:"Muy recomendable",c:8,m:"Pico",sd:"Baile",g:"New Wave / Dance",gen:"Transgeneracional",s:"Love Shack",note:"Fiesta instantánea; Rock Lobster de nicho."},
+{n:"Kim Wilde",t:"Para probar",c:6,m:"Construcción",sd:"Ambos",g:"New Wave",gen:"Gen X",s:"Kids in America",note:"Coro adolescente pegajoso."},
+{n:"Bananarama",t:"Para probar",c:6,m:"Pico",sd:"Baile",g:"Synthpop / Dance",gen:"Gen X",s:"Venus",note:"Guilty pleasure bailable."},
+{n:"Cutting Crew",t:"Para probar",c:6,m:"Coreable",sd:"Canto",g:"New Wave",gen:"Gen X",s:"(I Just) Died in Your Arms",note:"Baladón coreable de karaoke."},
+{n:"Cock Robin",t:"Para probar",c:6,m:"Coreable",sd:"Canto",g:"Soft Rock / New Wave",gen:"Gen X (fuerte en Latam)",s:"The Promise You Made",note:"Enorme en Latinoamérica; nostalgia segura."},
+{n:"Icehouse",t:"Para probar",c:6,m:"Construcción",sd:"Ambos",g:"New Wave",gen:"Gen X",s:"Electric Blue",note:"Synth-rock australiano elegante."},
+{n:"The Motels",t:"Para probar",c:5,m:"Apertura",sd:"Ambos",g:"New Wave",gen:"Gen X",s:"Only the Lonely",note:"Atmósfera noir; para abrir suave."},
+{n:"Missing Persons",t:"Para probar",c:5,m:"Construcción",sd:"Baile",g:"New Wave",gen:"Gen X",s:"Words",note:"New wave angular; estética fuerte."},
+{n:"Visage",t:"Para probar",c:5,m:"Construcción",sd:"Baile",g:"New Romantic / Synth",gen:"Gen X",s:"Fade to Grey",note:"Frío y elegante; nicho New Romantic."},
+{n:"Blancmange",t:"Para probar",c:5,m:"Construcción",sd:"Baile",g:"Synthpop",gen:"Gen X",s:"Living on the Ceiling",note:"Rareza bailable con sabor exótico."},
+{n:"Bronski Beat",t:"Para probar",c:6,m:"Pico",sd:"Baile",g:"Hi-NRG / Synthpop",gen:"Gen X",s:"Smalltown Boy",note:"Falsete inconfundible; energía de pista."},
+{n:"Corey Hart",t:"Para probar",c:6,m:"Construcción",sd:"Ambos",g:"New Wave",gen:"Gen X",s:"Sunglasses at Night",note:"Anzuelo synth + estética ochentera."},
+/* --- Post-punk / Goth accesible --- */
+{n:"Joy Division",t:"Solo en momentos",c:6,m:"Construcción",sd:"Ambos",g:"Post Punk",gen:"Gen X + Millennial (culto)",s:"Love Will Tear Us Apart",note:"Un tema, gran clase; no abusar por lo oscuro."},
+{n:"Siouxsie and the Banshees",t:"Solo en momentos",c:6,m:"Construcción",sd:"Ambos",g:"Post Punk / Goth",gen:"Gen X (culto)",s:"Cities in Dust",note:"Estética goth; para el público que la pide."},
+{n:"Bauhaus",t:"Solo en momentos",c:5,m:"Construcción",sd:"Ambos",g:"Gothic Rock",gen:"Gen X (culto)",s:"Bela Lugosi’s Dead",note:"Goth puro; solo en noches temáticas."},
+{n:"The Sisters of Mercy",t:"Solo en momentos",c:6,m:"Construcción",sd:"Baile",g:"Gothic Rock",gen:"Gen X (culto)",s:"This Corrosion",note:"Épica goth-dance; nicho fiel."},
+{n:"The Church",t:"Para probar",c:6,m:"Apertura",sd:"Ambos",g:"Post Punk / Dream",gen:"Gen X",s:"Under the Milky Way",note:"Atmósfera hermosa para abrir."},
+{n:"The Smiths",t:"Muy recomendable",c:8,m:"Construcción",sd:"Canto",g:"Indie / Jangle Pop",gen:"Gen X + Millennial (culto fuerte)",s:"This Charming Man",note:"Culto devoto; There Is a Light coreable."},
+{n:"The Cult",t:"Muy recomendable",c:7,m:"Pico",sd:"Ambos",g:"Goth Rock / Hard",gen:"Gen X",s:"She Sells Sanctuary",note:"Riff hipnótico; puente entre goth y rock."},
+{n:"She Wants Revenge",t:"Para probar",c:6,m:"Construcción",sd:"Baile",g:"Dark Wave revival",gen:"Millennial",s:"Tear You Apart",note:"Post-punk 2000s; TikTok le dio segunda vida."},
+{n:"Interpol",t:"Muy recomendable",c:8,m:"Construcción",sd:"Ambos",g:"Post-punk revival",gen:"Millennial",s:"Evil",note:"Elegancia oscura; NYC 2000s con groove."},
+{n:"Editors",t:"Para probar",c:7,m:"Construcción",sd:"Ambos",g:"Post-punk revival",gen:"Millennial",s:"Munich",note:"Interpol británico; dramatismo controlado."},
+{n:"White Lies",t:"Para probar",c:6,m:"Construcción",sd:"Ambos",g:"Post-punk revival",gen:"Millennial",s:"To Lose My Life",note:"Épico y sombrío; para el bloque indie oscuro."},
+/* --- Britpop / Madchester / UK 90s-2000s --- */
+{n:"The Stone Roses",t:"Muy recomendable",c:8,m:"Construcción",sd:"Baile",g:"Madchester",gen:"Gen X + Millennial",s:"I Wanna Be Adored",note:"Groove baggy; puente rock-dance."},
+{n:"Happy Mondays",t:"Para probar",c:6,m:"Pico",sd:"Baile",g:"Madchester",gen:"Gen X",s:"Step On",note:"Fiesta desprolija; groove contagioso."},
+{n:"The Charlatans",t:"Para probar",c:6,m:"Construcción",sd:"Baile",g:"Madchester / Indie",gen:"Gen X",s:"The Only One I Know",note:"Órgano hipnótico; para variar."},
+{n:"Inspiral Carpets",t:"Para probar",c:5,m:"Construcción",sd:"Baile",g:"Madchester",gen:"Gen X",s:"This Is How It Feels",note:"Nicho baggy con carácter."},
+{n:"James",t:"Muy recomendable",c:7,m:"Coreable",sd:"Canto",g:"Britpop / Indie",gen:"Gen X + Millennial",s:"Laid",note:"Coro travieso; Sit Down es himno."},
+{n:"The La’s",t:"Muy recomendable",c:7,m:"Construcción",sd:"Canto",g:"Britpop / Jangle",gen:"Gen X",s:"There She Goes",note:"Perfección pop de 3 minutos."},
+{n:"Supergrass",t:"Muy recomendable",c:7,m:"Pico",sd:"Ambos",g:"Britpop",gen:"Gen X + Millennial",s:"Alright",note:"Alegría pura y juvenil."},
+{n:"Elastica",t:"Para probar",c:6,m:"Pico",sd:"Baile",g:"Britpop / Post-punk",gen:"Gen X",s:"Connection",note:"Filo punk-pop con actitud."},
+{n:"Ocean Colour Scene",t:"Para probar",c:6,m:"Construcción",sd:"Canto",g:"Britpop",gen:"Gen X",s:"The Riverboat Song",note:"Riff mod; buen groove."},
+{n:"Cast",t:"Para probar",c:5,m:"Construcción",sd:"Canto",g:"Britpop",gen:"Gen X",s:"Walkaway",note:"Coro melancólico coreable."},
+{n:"Kula Shaker",t:"Para probar",c:6,m:"Pico",sd:"Ambos",g:"Britpop / Psych",gen:"Gen X",s:"Hush",note:"Psicodelia enérgica; cover conocido."},
+{n:"Manic Street Preachers",t:"Muy recomendable",c:7,m:"Coreable",sd:"Canto",g:"Alt / Britrock",gen:"Gen X + Millennial",s:"If You Tolerate This…",note:"Himnos con letra; Motorcycle Emptiness."},
+{n:"Stereophonics",t:"Muy recomendable",c:7,m:"Coreable",sd:"Canto",g:"Britrock",gen:"Millennial",s:"Dakota",note:"Coro de estadio; voz rasgada icónica."},
+{n:"Travis",t:"Para probar",c:6,m:"Coreable",sd:"Canto",g:"Britpop / Soft Alt",gen:"Millennial",s:"Why Does It Always Rain on Me?",note:"Melancolía coreable; suave."},
+{n:"Feeder",t:"Para probar",c:6,m:"Pico",sd:"Ambos",g:"Alt Rock",gen:"Millennial",s:"Buck Rogers",note:"Riff alegre y directo."},
+{n:"Catatonia",t:"Para probar",c:5,m:"Construcción",sd:"Ambos",g:"Britpop",gen:"Gen X",s:"Mulder and Scully",note:"Voz galesa con carácter."},
+{n:"Space",t:"Para probar",c:5,m:"Pico",sd:"Baile",g:"Britpop / Alt",gen:"Gen X",s:"Female of the Species",note:"Rareza divertida y teatral."},
+{n:"Shed Seven",t:"Para probar",c:5,m:"Construcción",sd:"Canto",g:"Britpop",gen:"Gen X",s:"Chasing Rainbows",note:"Coro sincero infravalorado."},
+{n:"Sleeper",t:"Para probar",c:5,m:"Construcción",sd:"Ambos",g:"Britpop",gen:"Gen X",s:"Inbetweener",note:"Britpop con filo femenino."},
+{n:"Placebo",t:"—",c:0,m:"",sd:"",g:"",gen:"",s:"",note:""},
+/* --- Indie / Dance-rock / Garage 2000s --- */
+{n:"Arctic Monkeys",t:"Imprescindible",c:9,m:"Pico",sd:"Ambos",g:"Indie Rock 2000s",gen:"Millennial + Gen Z (TikTok)",s:"Do I Wanna Know?",note:"Puente perfecto a Gen Z; R U Mine explota."},
+{n:"Bloc Party",t:"Muy recomendable",c:8,m:"Pico",sd:"Baile",g:"Dance Punk",gen:"Millennial",s:"Banquet",note:"Energía angular bailable."},
+{n:"Yeah Yeah Yeahs",t:"Muy recomendable",c:8,m:"Pico",sd:"Baile",g:"Indie / Art Punk",gen:"Millennial",s:"Heads Will Roll",note:"Karen O actitud; sincronía Gossip Girl/TikTok."},
+{n:"The Bravery",t:"Para probar",c:7,m:"Pico",sd:"Baile",g:"Dance Rock",gen:"Millennial",s:"An Honest Mistake",note:"Hermano del Killers; muy bailable."},
+{n:"Kasabian",t:"Muy recomendable",c:7,m:"Pico",sd:"Ambos",g:"Indie / Dance Rock",gen:"Millennial",s:"Club Foot",note:"Groove muscular; Fire coreable."},
+{n:"The Fratellis",t:"Muy recomendable",c:8,m:"Pico",sd:"Baile",g:"Indie Rock",gen:"Millennial",s:"Chelsea Dagger",note:"‘Du du du’ que canta todo el bar (deporte)."},
+{n:"Razorlight",t:"Para probar",c:6,m:"Coreable",sd:"Canto",g:"Indie Rock",gen:"Millennial",s:"America",note:"Coro grande y directo."},
+{n:"The Kooks",t:"Muy recomendable",c:7,m:"Construcción",sd:"Ambos",g:"Indie Pop Rock",gen:"Millennial + Gen Z",s:"Naïve",note:"Amable y pegajoso; entrada suave a indie."},
+{n:"Two Door Cinema Club",t:"Muy recomendable",c:8,m:"Pico",sd:"Baile",g:"Indie Dance",gen:"Millennial + Gen Z",s:"What You Know",note:"Energía luminosa; imán para jóvenes."},
+{n:"Phoenix",t:"Muy recomendable",c:8,m:"Pico",sd:"Baile",g:"Indie Pop / Dance",gen:"Millennial",s:"1901",note:"Groove elegante francés; Lisztomania."},
+{n:"Foals",t:"Para probar",c:7,m:"Pico",sd:"Baile",g:"Indie / Math Rock",gen:"Millennial",s:"My Number",note:"Groove sofisticado y bailable."},
+{n:"Kings of Leon",t:"Imprescindible",c:9,m:"Coreable",sd:"Canto",g:"Southern Indie Rock",gen:"Millennial",s:"Sex on Fire",note:"Himno coreable garantizado; Use Somebody."},
+{n:"The Wombats",t:"Para probar",c:7,m:"Pico",sd:"Baile",g:"Indie Pop Rock",gen:"Millennial + Gen Z",s:"Let’s Dance to Joy Division",note:"Meta y bailable; TikTok friendly."},
+{n:"Hot Hot Heat",t:"Para probar",c:6,m:"Pico",sd:"Baile",g:"Dance Punk",gen:"Millennial",s:"Bandages",note:"Nervioso y contagioso."},
+{n:"The Rapture",t:"Para probar",c:6,m:"Pico",sd:"Baile",g:"Dance Punk",gen:"Millennial",s:"House of Jealous Lovers",note:"Punk-funk para la parte más disco."},
+{n:"The Vines",t:"Para probar",c:6,m:"Pico",sd:"Ambos",g:"Garage Rock",gen:"Millennial",s:"Get Free",note:"Explosión garage 2000s."},
+{n:"Wolfmother",t:"Muy recomendable",c:7,m:"Pico",sd:"Ambos",g:"Hard / Retro Rock",gen:"Millennial",s:"Woman",note:"Riff Zeppeliniano moderno (Guitar Hero)."},
+{n:"The Black Keys",t:"Muy recomendable",c:8,m:"Construcción",sd:"Ambos",g:"Blues / Garage Rock",gen:"Millennial",s:"Lonely Boy",note:"Groove sucio y accesible."},
+{n:"Cage the Elephant",t:"Muy recomendable",c:7,m:"Pico",sd:"Ambos",g:"Alt / Garage",gen:"Millennial + Gen Z",s:"Ain’t No Rest for the Wicked",note:"Groove reconocible (videojuegos)."},
+{n:"MGMT",t:"Muy recomendable",c:8,m:"Pico",sd:"Baile",g:"Psych Pop / Indie",gen:"Millennial + Gen Z",s:"Electric Feel",note:"Kids y Electric Feel son himnos de fiesta indie."},
+{n:"Empire of the Sun",t:"Para probar",c:7,m:"Pico",sd:"Baile",g:"Electro / Indie",gen:"Millennial",s:"We Are the People",note:"Épico y bailable; estética fuerte."},
+{n:"Vampire Weekend",t:"Para probar",c:7,m:"Construcción",sd:"Baile",g:"Indie Pop",gen:"Millennial",s:"A-Punk",note:"Ligero y elegante; para variar el color."},
+{n:"Modest Mouse",t:"Para probar",c:6,m:"Construcción",sd:"Ambos",g:"Indie Rock",gen:"Millennial",s:"Float On",note:"Optimismo indie coreable."},
+{n:"Franz Ferdinand",t:"—",c:0,m:"",sd:"",g:"",gen:"",s:"",note:""},
+{n:"The Cribs",t:"Para probar",c:5,m:"Pico",sd:"Ambos",g:"Indie Rock",gen:"Millennial",s:"Men’s Needs",note:"Filo indie británico."},
+{n:"Maxïmo Park",t:"Para probar",c:6,m:"Pico",sd:"Baile",g:"Indie / Post-punk",gen:"Millennial",s:"Apply Some Pressure",note:"Energía nerviosa; buen puente."},
+{n:"LCD Soundsystem",t:"Para probar",c:6,m:"Pico",sd:"Baile",g:"Dance Punk / Electro",gen:"Millennial",s:"Daft Punk Is Playing at My House",note:"Para el bloque más disco-rock."},
+{n:"Interpol",t:"—",c:0,m:"",sd:"",g:"",gen:"",s:"",note:""},
+/* --- Grunge / Alt 90s US --- */
+{n:"Pearl Jam",t:"Muy recomendable",c:8,m:"Coreable",sd:"Canto",g:"Grunge",gen:"Gen X + Millennial",s:"Alive",note:"Even Flow riff; Black para el respiro."},
+{n:"Soundgarden",t:"Solo en momentos",c:6,m:"Pico",sd:"Ambos",g:"Grunge / Hard",gen:"Gen X + Millennial",s:"Black Hole Sun",note:"Más pesada; Black Hole Sun es la accesible."},
+{n:"Alice in Chains",t:"Solo en momentos",c:6,m:"Construcción",sd:"Ambos",g:"Grunge / Sludge",gen:"Gen X + Millennial",s:"Would?",note:"Oscura y densa; dosificar."},
+{n:"Bush",t:"Muy recomendable",c:8,m:"Pico",sd:"Ambos",g:"Post-grunge",gen:"Millennial",s:"Glycerine",note:"Machinehead riff; Glycerine coreable."},
+{n:"Silverchair",t:"Muy recomendable",c:7,m:"Pico",sd:"Ambos",g:"Grunge / Post-grunge",gen:"Millennial",s:"Tomorrow",note:"Nostalgia adolescente noventera."},
+{n:"Candlebox",t:"Para probar",c:6,m:"Coreable",sd:"Canto",g:"Post-grunge",gen:"Gen X",s:"Far Behind",note:"Baladón grunge coreable."},
+{n:"Gin Blossoms",t:"Muy recomendable",c:7,m:"Construcción",sd:"Canto",g:"Jangle / Alt 90s",gen:"Millennial",s:"Hey Jealousy",note:"Sol y melancolía; muy amable."},
+{n:"Toadies",t:"Para probar",c:6,m:"Pico",sd:"Ambos",g:"Alt Rock 90s",gen:"Gen X",s:"Possum Kingdom",note:"Groove oscuro con gancho."},
+{n:"Everclear",t:"Para probar",c:6,m:"Pico",sd:"Canto",g:"Alt Rock 90s",gen:"Millennial",s:"Santa Monica",note:"Coro brillante y directo."},
+{n:"Semisonic",t:"Muy recomendable",c:8,m:"Cierre",sd:"Canto",g:"Power Pop / Alt",gen:"Millennial",s:"Closing Time",note:"Literalmente el tema de cierre perfecto."},
+{n:"Fastball",t:"Para probar",c:6,m:"Construcción",sd:"Canto",g:"Power Pop",gen:"Millennial",s:"The Way",note:"Pegajosa y soleada."},
+{n:"Third Eye Blind",t:"Muy recomendable",c:8,m:"Pico",sd:"Canto",g:"Alt / Power Pop",gen:"Millennial",s:"Semi-Charmed Life",note:"‘Doo doo doo’ que canta todo el bar."},
+{n:"Matchbox Twenty",t:"Muy recomendable",c:7,m:"Coreable",sd:"Canto",g:"Post-grunge / Pop Rock",gen:"Millennial",s:"3AM",note:"Radio-rock coreable; Push."},
+{n:"Goo Goo Dolls",t:"Muy recomendable",c:7,m:"Coreable",sd:"Canto",g:"Alt / Soft Rock",gen:"Millennial",s:"Iris",note:"Baladón cinematográfico de karaoke."},
+{n:"The Wallflowers",t:"Para probar",c:6,m:"Construcción",sd:"Canto",g:"Roots / Alt",gen:"Millennial",s:"One Headlight",note:"Cálida y coreable."},
+{n:"Better Than Ezra",t:"Para probar",c:5,m:"Construcción",sd:"Canto",g:"Alt 90s",gen:"Millennial",s:"Good",note:"Amable y luminosa."},
+{n:"Weezer",t:"Imprescindible",c:9,m:"Pico",sd:"Canto",g:"Power Pop / Alt",gen:"Millennial + Gen Z",s:"Buddy Holly",note:"Say It Ain’t So coreable; Africa meme."},
+{n:"Presidents of the USA",t:"Muy recomendable",c:7,m:"Pico",sd:"Canto",g:"Alt / Comedy Rock",gen:"Millennial",s:"Peaches",note:"Divertidísima; puro coro tonto y feliz."},
+{n:"Harvey Danger",t:"Para probar",c:6,m:"Pico",sd:"Canto",g:"Alt 90s",gen:"Millennial",s:"Flagpole Sitta",note:"Meme y coro nervioso."},
+{n:"Nada Surf",t:"Para probar",c:5,m:"Construcción",sd:"Canto",g:"Alt / Power Pop",gen:"Millennial",s:"Popular",note:"Rareza noventera con gancho."},
+{n:"Fountains of Wayne",t:"Muy recomendable",c:7,m:"Construcción",sd:"Canto",g:"Power Pop",gen:"Millennial",s:"Stacy’s Mom",note:"Meme absoluto; power pop perfecto."},
+{n:"Cake",t:"Muy recomendable",c:7,m:"Construcción",sd:"Ambos",g:"Alt / Funk Rock",gen:"Millennial",s:"The Distance",note:"Groove seco e irónico; muy pegajosa."},
+{n:"Beck",t:"Muy recomendable",c:7,m:"Pico",sd:"Baile",g:"Alt / Funk",gen:"Millennial",s:"Loser",note:"Groove raro; E-Pro y Loser reconocibles."},
+{n:"Smashing Pumpkins",t:"Muy recomendable",c:8,m:"Coreable",sd:"Canto",g:"Alt Rock",gen:"Gen X + Millennial",s:"1979",note:"1979 nostálgica; Bullet with… más intensa."},
+{n:"Jane’s Addiction",t:"Para probar",c:6,m:"Pico",sd:"Ambos",g:"Alt / Funk Rock",gen:"Gen X",s:"Been Caught Stealing",note:"Groove con actitud; algo denso."},
+{n:"Veruca Salt",t:"Para probar",c:6,m:"Pico",sd:"Ambos",g:"Alt / Grunge Pop",gen:"Gen X",s:"Seether",note:"Filo dulce-agrio noventero."},
+{n:"The Breeders",t:"Para probar",c:6,m:"Construcción",sd:"Ambos",g:"Alt Rock",gen:"Gen X",s:"Cannonball",note:"Riff icónico y raro."},
+{n:"Letters to Cleo",t:"Para probar",c:5,m:"Construcción",sd:"Canto",g:"Alt / Power Pop",gen:"Millennial",s:"Here & Now",note:"Nostalgia soundtrack noventero."},
+{n:"Sheryl Crow",t:"Muy recomendable",c:7,m:"Construcción",sd:"Canto",g:"Roots / Pop Rock",gen:"Millennial",s:"If It Makes You Happy",note:"Voz cálida; coros de karaoke."},
+{n:"Natalie Imbruglia",t:"Muy recomendable",c:7,m:"Coreable",sd:"Canto",g:"Pop Rock 90s",gen:"Millennial",s:"Torn",note:"Coro de karaoke universal."},
+{n:"Meredith Brooks",t:"Para probar",c:6,m:"Pico",sd:"Canto",g:"Alt Pop Rock",gen:"Millennial",s:"Bitch",note:"Actitud coreable de una sola."},
+{n:"4 Non Blondes",t:"Muy recomendable",c:8,m:"Coreable",sd:"Canto",g:"Alt Rock 90s",gen:"Transgeneracional (meme)",s:"What’s Up?",note:"‘Hey yeah yeah’ que grita todo el mundo."},
+{n:"Deep Blue Something",t:"Para probar",c:6,m:"Coreable",sd:"Canto",g:"Alt 90s",gen:"Millennial",s:"Breakfast at Tiffany’s",note:"One-hit coreable y feliz."},
+{n:"Spin Doctors",t:"Para probar",c:6,m:"Construcción",sd:"Ambos",g:"Alt / Funk Rock",gen:"Gen X",s:"Two Princes",note:"Groove alegre noventero."},
+{n:"Blind Melon",t:"Para probar",c:6,m:"Construcción",sd:"Canto",g:"Alt Rock",gen:"Gen X",s:"No Rain",note:"Sol y nostalgia (la niña abeja)."},
+{n:"Eagle-Eye Cherry",t:"Para probar",c:6,m:"Construcción",sd:"Canto",g:"Pop Rock",gen:"Millennial",s:"Save Tonight",note:"Coro amable de karaoke."},
+{n:"Semisonic",t:"—",c:0,m:"",sd:"",g:"",gen:"",s:"",note:""},
+/* --- Emo / Pop punk / 2000s alt --- */
+{n:"Blink-182",t:"Imprescindible",c:9,m:"Pico",sd:"Canto",g:"Pop Punk",gen:"Millennial + Gen Z",s:"All the Small Things",note:"Coro ‘na na na’ transgeneracional."},
+{n:"Sum 41",t:"Muy recomendable",c:8,m:"Pico",sd:"Canto",g:"Pop Punk",gen:"Millennial",s:"In Too Deep",note:"Energía adolescente coreable."},
+{n:"Fall Out Boy",t:"Muy recomendable",c:8,m:"Pico",sd:"Canto",g:"Emo Pop",gen:"Millennial + Gen Z",s:"Sugar, We’re Goin Down",note:"Coro enredado que todos igual cantan."},
+{n:"Paramore",t:"Imprescindible",c:9,m:"Pico",sd:"Canto",g:"Pop Punk / Emo",gen:"Millennial + Gen Z",s:"Misery Business",note:"Hayley = imán; coro explosivo."},
+{n:"Panic! at the Disco",t:"Muy recomendable",c:8,m:"Pico",sd:"Canto",g:"Emo / Baroque Pop",gen:"Millennial + Gen Z",s:"I Write Sins Not Tragedies",note:"Teatral y coreable; TikTok fuerte."},
+{n:"Jimmy Eat World",t:"Muy recomendable",c:8,m:"Coreable",sd:"Canto",g:"Emo / Alt",gen:"Millennial",s:"The Middle",note:"Himno feel-good universal."},
+{n:"The All-American Rejects",t:"Muy recomendable",c:8,m:"Pico",sd:"Canto",g:"Pop Punk / Emo",gen:"Millennial",s:"Gives You Hell",note:"Coro rencoroso y feliz de gritar."},
+{n:"Yellowcard",t:"Para probar",c:7,m:"Pico",sd:"Canto",g:"Pop Punk",gen:"Millennial",s:"Ocean Avenue",note:"Nostalgia pop-punk con violín."},
+{n:"Good Charlotte",t:"Para probar",c:7,m:"Pico",sd:"Canto",g:"Pop Punk",gen:"Millennial",s:"Lifestyles of the Rich and Famous",note:"Actitud adolescente coreable."},
+{n:"Simple Plan",t:"Para probar",c:7,m:"Pico",sd:"Canto",g:"Pop Punk",gen:"Millennial",s:"I’m Just a Kid",note:"Nostalgia MTV; TikTok revival."},
+{n:"The Offspring",t:"Imprescindible",c:9,m:"Pico",sd:"Canto",g:"Punk Rock / Pop Punk",gen:"Millennial",s:"Self Esteem",note:"Pretty Fly meme; coros enormes."},
+{n:"30 Seconds to Mars",t:"Para probar",c:7,m:"Coreable",sd:"Canto",g:"Alt / Emo",gen:"Millennial + Gen Z",s:"The Kill",note:"Épico y catártico; coro de manos arriba."},
+{n:"AFI",t:"Solo en momentos",c:6,m:"Pico",sd:"Canto",g:"Emo / Punk",gen:"Millennial",s:"Miss Murder",note:"Filo goth-punk; para el bloque más oscuro."},
+{n:"Taking Back Sunday",t:"Solo en momentos",c:5,m:"Pico",sd:"Canto",g:"Emo",gen:"Millennial",s:"MakeDamnSure",note:"Emo de culto; público específico."},
+{n:"Dashboard Confessional",t:"Solo en momentos",c:5,m:"Coreable",sd:"Canto",g:"Emo Acústico",gen:"Millennial",s:"Hands Down",note:"Catarsis emo; nicho fiel."},
+{n:"Avril Lavigne",t:"Muy recomendable",c:8,m:"Pico",sd:"Canto",g:"Pop Punk",gen:"Millennial + Gen Z",s:"Complicated",note:"Sk8er Boi coreable; nostalgia enorme."},
+/* --- Alt/rock moderno accesible --- */
+{n:"Coldplay",t:"Muy recomendable",c:8,m:"Coreable",sd:"Canto",g:"Alt / Arena",gen:"Millennial + Gen Z",s:"Yellow",note:"Coros de estadio; The Scientist para respiro."},
+{n:"Keane",t:"Para probar",c:6,m:"Coreable",sd:"Canto",g:"Piano Alt",gen:"Millennial",s:"Somewhere Only We Know",note:"Melancolía coreable; sin guitarras."},
+{n:"Snow Patrol",t:"Muy recomendable",c:7,m:"Coreable",sd:"Canto",g:"Alt Rock",gen:"Millennial",s:"Chasing Cars",note:"Baladón universal de series."},
+{n:"The Fray",t:"Para probar",c:6,m:"Coreable",sd:"Canto",g:"Piano Rock",gen:"Millennial",s:"How to Save a Life",note:"Emotiva de series; respiro coreable."},
+{n:"OneRepublic",t:"Para probar",c:6,m:"Coreable",sd:"Canto",g:"Pop Rock",gen:"Millennial + Gen Z",s:"Counting Stars",note:"Coro pop-rock masivo."},
+{n:"Imagine Dragons",t:"Para probar",c:7,m:"Pico",sd:"Ambos",g:"Pop / Arena Rock",gen:"Gen Z + Millennial",s:"Radioactive",note:"Muy reconocible por Gen Z; algo genérica."},
+{n:"The Killers",t:"—",c:0,m:"",sd:"",g:"",gen:"",s:"",note:""},
+{n:"Death Cab for Cutie",t:"Solo en momentos",c:5,m:"Apertura",sd:"Canto",g:"Indie Rock",gen:"Millennial",s:"Soul Meets Body",note:"Suave e íntima; para abrir/bajar."},
+{n:"The Shins",t:"Para probar",c:5,m:"Apertura",sd:"Ambos",g:"Indie Pop",gen:"Millennial",s:"New Slang",note:"Delicada; textura para abrir."},
+{n:"Radiohead",t:"Solo en momentos",c:6,m:"Coreable",sd:"Canto",g:"Alt Rock",gen:"Gen X + Millennial",s:"Creep",note:"Solo Creep/Karma Police; el resto enfría un bar."},
+/* --- Goth accesible / synth-rock oscuro / femenino --- */
+{n:"Within Temptation",t:"Para probar",c:6,m:"Pico",sd:"Canto",g:"Symphonic / Gothic",gen:"Millennial",s:"Ice Queen",note:"Épica; para fans del rock dramático."},
+{n:"Nightwish",t:"Solo en momentos",c:5,m:"Pico",sd:"Canto",g:"Symphonic Metal",gen:"Millennial",s:"Nemo",note:"Nicho sinfónico; dosificar."},
+{n:"Lacuna Coil",t:"Solo en momentos",c:5,m:"Pico",sd:"Ambos",g:"Gothic Metal",gen:"Millennial",s:"Our Truth",note:"Goth-metal accesible; público específico."},
+{n:"HIM",t:"Para probar",c:6,m:"Coreable",sd:"Canto",g:"Gothic Rock / Love Metal",gen:"Millennial",s:"Join Me in Death",note:"Romántico-oscuro; coreable."},
+{n:"Type O Negative",t:"Solo en momentos",c:5,m:"Construcción",sd:"Ambos",g:"Gothic Metal",gen:"Gen X (culto)",s:"Black No. 1",note:"Humor oscuro; noches goth."},
+{n:"Marilyn Manson",t:"Solo en momentos",c:6,m:"Pico",sd:"Ambos",g:"Industrial / Shock Rock",gen:"Millennial",s:"The Beautiful People",note:"Sweet Dreams cover conecta; dosificar."},
+{n:"Nine Inch Nails",t:"Solo en momentos",c:5,m:"Pico",sd:"Ambos",g:"Industrial",gen:"Gen X + Millennial",s:"Closer",note:"Groove oscuro; un tema, con criterio."},
+{n:"Depeche Mode",t:"—",c:0,m:"",sd:"",g:"",gen:"",s:"",note:""},
+/* --- Shoegaze accesible / dream --- */
+{n:"The Sundays",t:"Para probar",c:6,m:"Apertura",sd:"Ambos",g:"Dream Pop / Jangle",gen:"Gen X",s:"Here’s Where the Story Ends",note:"Luminosa para abrir con clase."},
+{n:"Mazzy Star",t:"Solo en momentos",c:5,m:"Apertura",sd:"Ambos",g:"Dream Pop",gen:"Gen X + Millennial (TikTok)",s:"Fade into You",note:"Hipnótica; revival TikTok, pero lenta."},
+{n:"Cocteau Twins",t:"Solo en momentos",c:4,m:"Apertura",sd:"Ambos",g:"Dream Pop / Shoegaze",gen:"Gen X (culto)",s:"Cherry-coloured Funk",note:"Etérea; textura de fondo, no de pista."},
+{n:"The Cranberries",t:"—",c:0,m:"",sd:"",g:"",gen:"",s:"",note:""},
+{n:"Cranberries",t:"—",c:0,m:"",sd:"",g:"",gen:"",s:"",note:""},
+/* --- Glam / Classic accesible / AOR / Soft --- */
+{n:"T. Rex",t:"Muy recomendable",c:8,m:"Construcción",sd:"Ambos",g:"Glam Rock",gen:"Transgeneracional",s:"Get It On (Bang a Gong)",note:"Groove glam contagioso; 20th Century Boy."},
+{n:"Roxy Music",t:"Muy recomendable",c:7,m:"Construcción",sd:"Ambos",g:"Glam / Art Rock",gen:"Gen X",s:"More Than This",note:"Elegancia total; Love Is the Drug bailable."},
+{n:"Sweet",t:"Muy recomendable",c:7,m:"Pico",sd:"Canto",g:"Glam Rock",gen:"Transgeneracional",s:"Ballroom Blitz",note:"Explosión glam; coro reconocible (cine)."},
+{n:"Slade",t:"Para probar",c:6,m:"Pico",sd:"Canto",g:"Glam Rock",gen:"Gen X",s:"Cum On Feel the Noize",note:"Coro de estadio (cover de Quiet Riot)."},
+{n:"Mott the Hoople",t:"Para probar",c:6,m:"Coreable",sd:"Canto",g:"Glam Rock",gen:"Gen X",s:"All the Young Dudes",note:"Himno glam escrito por Bowie."},
+{n:"New York Dolls",t:"Solo en momentos",c:5,m:"Pico",sd:"Ambos",g:"Glam Punk",gen:"Gen X (culto)",s:"Personality Crisis",note:"Crudo y proto-punk; nicho."},
+{n:"Alice Cooper",t:"Muy recomendable",c:7,m:"Pico",sd:"Canto",g:"Shock / Glam Rock",gen:"Transgeneracional",s:"Poison",note:"School’s Out himno; teatralidad pura."},
+{n:"Cheap Trick",t:"Muy recomendable",c:7,m:"Coreable",sd:"Canto",g:"Power Pop",gen:"Gen X",s:"I Want You to Want Me",note:"Coro de karaoke perfecto."},
+{n:"The Cars",t:"Imprescindible",c:9,m:"Apertura",sd:"Ambos",g:"New Wave / Power Pop",gen:"Transgeneracional",s:"Just What I Needed",note:"Elegante y bailable; My Best Friend’s Girl."},
+{n:"The Police",t:"Imprescindible",c:9,m:"Construcción",sd:"Ambos",g:"New Wave / Rock",gen:"Transgeneracional",s:"Message in a Bottle",note:"Roxanne coreable; groove reggae-rock."},
+{n:"Cyndi Lauper",t:"Muy recomendable",c:8,m:"Pico",sd:"Baile",g:"New Wave / Pop",gen:"Transgeneracional",s:"Girls Just Want to Have Fun",note:"Fiesta instantánea; Time After Time respiro."},
+{n:"Fleetwood Mac",t:"Muy recomendable",c:8,m:"Construcción",sd:"Ambos",g:"Soft Rock",gen:"Transgeneracional (TikTok)",s:"Everywhere",note:"Dreams viral; Go Your Own Way coreable."},
+{n:"Toto",t:"Muy recomendable",c:8,m:"Coreable",sd:"Canto",g:"AOR / Soft Rock",gen:"Transgeneracional (meme)",s:"Africa",note:"Meme absoluto; coro que grita todo el bar."},
+{n:"Foreigner",t:"Muy recomendable",c:7,m:"Coreable",sd:"Canto",g:"AOR",gen:"Gen X + Millennial",s:"I Want to Know What Love Is",note:"Baladón de encendedor; Cold as Ice."},
+{n:"Boston",t:"Para probar",c:6,m:"Coreable",sd:"Canto",g:"AOR",gen:"Gen X",s:"More Than a Feeling",note:"Riff icónico (Guitar Hero)."},
+{n:"Survivor",t:"Muy recomendable",c:8,m:"Pico",sd:"Canto",g:"AOR",gen:"Transgeneracional (meme)",s:"Eye of the Tiger",note:"Motivación meme; energía instantánea."},
+{n:"Bon Jovi",t:"Imprescindible",c:9,m:"Coreable",sd:"Canto",g:"Arena / Glam Rock",gen:"Transgeneracional",s:"Livin’ on a Prayer",note:"El himno de karaoke definitivo en Latam."},
+{n:"Def Leppard",t:"Muy recomendable",c:7,m:"Pico",sd:"Canto",g:"Glam / Arena Rock",gen:"Gen X + Millennial",s:"Pour Some Sugar on Me",note:"Coro de fiesta ochentera."},
+{n:"Whitesnake",t:"Solo en momentos",c:6,m:"Coreable",sd:"Canto",g:"Glam / Hard Rock",gen:"Gen X",s:"Here I Go Again",note:"Baladón de puño arriba."},
+{n:"Bonnie Tyler",t:"Muy recomendable",c:7,m:"Coreable",sd:"Canto",g:"Rock / Power Ballad",gen:"Transgeneracional",s:"Total Eclipse of the Heart",note:"Drama total de karaoke."},
+{n:"ELO",t:"Para probar",c:7,m:"Construcción",sd:"Ambos",g:"Symphonic Pop Rock",gen:"Transgeneracional",s:"Mr. Blue Sky",note:"Euforia orquestal; muy usada en cine."},
+{n:"Steve Miller Band",t:"Para probar",c:6,m:"Construcción",sd:"Ambos",g:"Classic Rock",gen:"Gen X",s:"The Joker",note:"Groove relajado y reconocible."},
+{n:"Dire Straits",t:"Muy recomendable",c:7,m:"Construcción",sd:"Ambos",g:"Rock",gen:"Transgeneracional",s:"Sultans of Swing",note:"Money for Nothing riff; virtuosismo cálido."},
+{n:"Tom Petty",t:"Muy recomendable",c:7,m:"Coreable",sd:"Canto",g:"Heartland Rock",gen:"Transgeneracional",s:"Free Fallin’",note:"Coro que canta todo el mundo."},
+{n:"Roxette",t:"Muy recomendable",c:8,m:"Coreable",sd:"Canto",g:"Pop Rock",gen:"Transgeneracional (Latam)",s:"The Look",note:"Enorme en Latam; Listen to Your Heart respiro."},
+{n:"Bryan Adams",t:"Muy recomendable",c:7,m:"Coreable",sd:"Canto",g:"Heartland / Soft Rock",gen:"Transgeneracional",s:"Summer of ’69",note:"Coro de karaoke garantizado."},
+{n:"Chris Isaak",t:"Para probar",c:6,m:"Apertura",sd:"Ambos",g:"Rockabilly / Soft",gen:"Gen X + Millennial",s:"Wicked Game",note:"Sensual y cinematográfica; para abrir."},
+/* --- Latinoamérica (curado, menos obvio) --- */
+{n:"Soda Stereo",t:"Imprescindible",c:10,m:"Coreable",sd:"Canto",g:"Rock en español / New Wave",gen:"Transgeneracional",s:"De Música Ligera",note:"Detonante local absoluto; úsalo bien, no en repeat."},
+{n:"Gustavo Cerati",t:"Muy recomendable",c:8,m:"Construcción",sd:"Ambos",g:"Rock alternativo",gen:"Millennial + Gen X",s:"Crimen",note:"Elegancia; Puente coreable."},
+{n:"Los Prisioneros",t:"Imprescindible",c:9,m:"Pico",sd:"Canto",g:"New Wave / Synth latino",gen:"Transgeneracional",s:"Tren al Sur",note:"Synth-rock latino perfecto para tu identidad."},
+{n:"Caifanes",t:"Muy recomendable",c:8,m:"Construcción",sd:"Ambos",g:"Rock alternativo / Goth latino",gen:"Gen X + Millennial",s:"La Célula Que Explota",note:"Viento coreable; oscuridad elegante."},
+{n:"Café Tacvba",t:"Muy recomendable",c:8,m:"Pico",sd:"Ambos",g:"Rock alternativo",gen:"Millennial + Gen X",s:"Eres",note:"Chilanga Banda energía; Eres respiro."},
+{n:"Aterciopelados",t:"Muy recomendable",c:7,m:"Construcción",sd:"Ambos",g:"Rock alternativo",gen:"Millennial + Gen X",s:"Bolero Falaz",note:"Groove con actitud; voz de Andrea."},
+{n:"Zoé",t:"Muy recomendable",c:8,m:"Construcción",sd:"Ambos",g:"Rock alternativo / Psych",gen:"Millennial + Gen Z",s:"Labios Rotos",note:"Coreable moderno; conecta con jóvenes."},
+{n:"Los Fabulosos Cadillacs",t:"Muy recomendable",c:8,m:"Pico",sd:"Baile",g:"Ska / Rock",gen:"Transgeneracional",s:"Matador",note:"Fiesta bailable; Vasos Vacíos respiro."},
+{n:"Babasónicos",t:"Para probar",c:7,m:"Construcción",sd:"Ambos",g:"Rock alternativo",gen:"Millennial",s:"Irresponsables",note:"Groove sexy y moderno."},
+{n:"Héroes del Silencio",t:"Muy recomendable",c:8,m:"Coreable",sd:"Canto",g:"Rock / Goth latino",gen:"Gen X + Millennial",s:"Entre Dos Tierras",note:"Coro épico; enorme en Latam."},
+{n:"Enjambre",t:"Para probar",c:7,m:"Coreable",sd:"Canto",g:"Rock alternativo",gen:"Millennial + Gen Z",s:"Dulce Soledad",note:"Dramático y coreable; estética retro."},
+{n:"Fobia",t:"Para probar",c:6,m:"Construcción",sd:"Ambos",g:"Rock alternativo",gen:"Gen X + Millennial",s:"El Diablo",note:"Rareza mexicana con gancho."},
+{n:"La Ley",t:"Muy recomendable",c:7,m:"Construcción",sd:"Ambos",g:"Rock alternativo",gen:"Millennial + Gen X",s:"Aquí",note:"Elegancia chilena; Mentira coreable."},
+{n:"Los Bunkers",t:"Para probar",c:6,m:"Construcción",sd:"Canto",g:"Rock alternativo",gen:"Millennial",s:"Llueve Sobre la Ciudad",note:"Melancolía coreable chilena."},
+{n:"Miguel Mateos",t:"Para probar",c:6,m:"Coreable",sd:"Canto",g:"Rock en español 80s",gen:"Gen X",s:"Cuando Seas Grande",note:"Nostalgia ochentera latina."},
+{n:"Andrés Calamaro",t:"Muy recomendable",c:7,m:"Coreable",sd:"Canto",g:"Rock en español",gen:"Millennial + Gen X",s:"Flaca",note:"Coro de bar por excelencia."},
+{n:"Los Rodríguez",t:"Para probar",c:6,m:"Coreable",sd:"Canto",g:"Rock en español",gen:"Gen X",s:"Sin Documentos",note:"Himno de bar coreable."},
+{n:"Molotov",t:"Solo en momentos",c:6,m:"Pico",sd:"Canto",g:"Rap Rock",gen:"Millennial",s:"Gimme Tha Power",note:"Energía fuerte; dosificar por lo pesado."},
+{n:"Attaque 77",t:"Solo en momentos",c:6,m:"Pico",sd:"Canto",g:"Punk Rock",gen:"Millennial + Gen X",s:"Hacelo Por Mí",note:"Punk coreable; un tema, no bloque."},
+{n:"Los Auténticos Decadentes",t:"Muy recomendable",c:7,m:"Pico",sd:"Baile",g:"Ska / Fiesta",gen:"Transgeneracional",s:"Loco (Tu Forma de Ser)",note:"Fiesta pura; para el pico bailable latino."},
+{n:"Divididos",t:"Para probar",c:6,m:"Pico",sd:"Ambos",g:"Rock argentino",gen:"Gen X",s:"Spaghetti del Rock",note:"Groove potente; algo denso."},
+{n:"Charly García",t:"Para probar",c:6,m:"Coreable",sd:"Canto",g:"Rock argentino",gen:"Gen X + Millennial",s:"Demoliendo Hoteles",note:"Culto; Rezo por Vos coreable."},
+{n:"Fito Páez",t:"Para probar",c:6,m:"Coreable",sd:"Canto",g:"Rock argentino",gen:"Millennial + Gen X",s:"Mariposa Tecknicolor",note:"Coro emotivo; respiro coreable."},
+{n:"Julieta Venegas",t:"Para probar",c:6,m:"Construcción",sd:"Canto",g:"Pop Rock latino",gen:"Millennial",s:"Andar Conmigo",note:"Amable y coreable; baja intensidad."},
+{n:"Los Amigos Invisibles",t:"Para probar",c:6,m:"Pico",sd:"Baile",g:"Funk / Acid Jazz latino",gen:"Millennial",s:"Ease Your Mind",note:"Groove bailable para variar el color."},
+{n:"El Cuarteto de Nos",t:"Para probar",c:6,m:"Construcción",sd:"Canto",g:"Rock alternativo",gen:"Millennial",s:"Yendo a la Casa de Damián",note:"Letras ingeniosas; coreable de nicho."},
+/* --- Perú (identidad local, deep cuts) --- */
+{n:"Líbido",t:"Muy recomendable",c:8,m:"Coreable",sd:"Canto",g:"Rock peruano alternativo",gen:"Millennial (Perú)",s:"Sáciame",note:"Himno local coreable; orgullo peruano."},
+{n:"Mar de Copas",t:"Muy recomendable",c:7,m:"Coreable",sd:"Canto",g:"Rock peruano",gen:"Gen X + Millennial (Perú)",s:"Un Día Sin Sexo",note:"Culto peruano; coro garantizado en Lima."},
+{n:"Amén",t:"Para probar",c:6,m:"Coreable",sd:"Canto",g:"Rock peruano",gen:"Millennial (Perú)",s:"Cae el Sol",note:"Nostalgia limeña; coreable."},
+{n:"Arena Hash",t:"Para probar",c:6,m:"Coreable",sd:"Canto",g:"Rock peruano 80s-90s",gen:"Gen X (Perú)",s:"Cuando Los Sapos Bailen Flamenco",note:"Clásico peruano; nostalgia fuerte."},
+{n:"Frágil",t:"Para probar",c:6,m:"Coreable",sd:"Canto",g:"Rock peruano",gen:"Gen X (Perú)",s:"Av. Larco",note:"Himno limeño transgeneracional."},
+{n:"Dolores Delirio",t:"Para probar",c:6,m:"Construcción",sd:"Ambos",g:"Goth Rock peruano",gen:"Gen X + Millennial (Perú)",s:"Cuando Duermes",note:"Deep cut goth local; identidad de nicho."},
+{n:"Cementerio Club",t:"Para probar",c:5,m:"Construcción",sd:"Ambos",g:"Rock peruano",gen:"Millennial (Perú)",s:"Tu Sombra",note:"Rock limeño con atmósfera."},
+{n:"We The Lion",t:"Para probar",c:6,m:"Construcción",sd:"Ambos",g:"Indie peruano",gen:"Gen Z + Millennial (Perú)",s:"Found Love",note:"Indie limeño moderno; conecta con jóvenes."},
+{n:"Leusemia",t:"Solo en momentos",c:5,m:"Pico",sd:"Canto",g:"Punk peruano",gen:"Gen X (Perú)",s:"Al Colegio No Voy Más",note:"Punk de culto local; un tema con criterio."},
+{n:"Los Mojarras",t:"Solo en momentos",c:5,m:"Pico",sd:"Baile",g:"Rock fusión peruano",gen:"Gen X (Perú)",s:"Sarita Colonia",note:"Identidad chicha-rock; nicho local."},
+/* --- Femenino / voces potentes extra --- */
+{n:"Shirley Manson / Garbage",t:"—",c:0,m:"",sd:"",g:"",gen:"",s:"",note:""},
+{n:"Republica",t:"—",c:0,m:"",sd:"",g:"",gen:"",s:"",note:""},
+{n:"The Pretenders",t:"Muy recomendable",c:7,m:"Construcción",sd:"Ambos",g:"New Wave / Rock",gen:"Gen X",s:"Brass in Pocket",note:"Chrissie Hynde actitud; Don’t Get Me Wrong."},
+{n:"Texas",t:"Para probar",c:6,m:"Construcción",sd:"Ambos",g:"Pop Rock",gen:"Gen X",s:"Say What You Want",note:"Groove elegante; voz cálida."},
+{n:"Skunk Anansie",t:"Para probar",c:6,m:"Pico",sd:"Ambos",g:"Alt Rock",gen:"Millennial",s:"Weak",note:"Voz brutal; Weak es baladón potente."},
+{n:"Lush",t:"Para probar",c:5,m:"Construcción",sd:"Ambos",g:"Shoegaze / Dream",gen:"Gen X",s:"Ladykillers",note:"Shoegaze accesible con gancho pop."},
+{n:"Republica2",t:"—",c:0,m:"",sd:"",g:"",gen:"",s:"",note:""},
+{n:"Bikini Kill",t:"Solo en momentos",c:4,m:"Pico",sd:"Ambos",g:"Riot Grrrl / Punk",gen:"Gen X (culto)",s:"Rebel Girl",note:"Crudo; para un momento muy específico."},
+{n:"Bikini Kill2",t:"—",c:0,m:"",sd:"",g:"",gen:"",s:"",note:""},
+/* --- Shoegaze/indie accesible extra --- */
+{n:"The Verve2",t:"—",c:0,m:"",sd:"",g:"",gen:"",s:"",note:""},
+{n:"Placebo2",t:"—",c:0,m:"",sd:"",g:"",gen:"",s:"",note:""},
+/* --- “Solo en momentos” clichés (con canción específica) --- */
+{n:"AC/DC",t:"Solo en momentos",c:7,m:"Pico",sd:"Canto",g:"Hard Rock",gen:"Transgeneracional",s:"Thunderstruck",note:"NO Back in Black otra vez: usa Thunderstruck como detonante de UN pico. TNT también."},
+{n:"Metallica",t:"Solo en momentos",c:6,m:"Pico",sd:"Canto",g:"Metal",gen:"Transgeneracional",s:"Nothing Else Matters",note:"Evita lo thrash: Nothing Else Matters como respiro coreable; Enter Sandman de guiño."},
+{n:"Guns N’ Roses",t:"Solo en momentos",c:8,m:"Coreable",sd:"Canto",g:"Hard Rock",gen:"Transgeneracional",s:"Sweet Child o’ Mine",note:"Sweet Child y Paradise City sí funcionan como himnos; no llenes con deep cuts."},
+{n:"Led Zeppelin",t:"Solo en momentos",c:6,m:"Construcción",sd:"Ambos",g:"Hard / Blues Rock",gen:"Transgeneracional",s:"Immigrant Song",note:"Immigrant Song (el ‘aah-ah’ es meme/Thor) mejor que Stairway para pista."},
+{n:"Pink Floyd",t:"Solo en momentos",c:6,m:"Coreable",sd:"Canto",g:"Prog Rock",gen:"Transgeneracional",s:"Another Brick in the Wall",note:"Solo el coro de Another Brick; el resto es demasiado largo para un bar."},
+{n:"Aerosmith",t:"Solo en momentos",c:7,m:"Coreable",sd:"Canto",g:"Hard Rock",gen:"Transgeneracional",s:"I Don’t Want to Miss a Thing",note:"Baladón de karaoke; Walk This Way para groove."},
+{n:"Van Halen",t:"Solo en momentos",c:7,m:"Pico",sd:"Ambos",g:"Hard Rock",gen:"Transgeneracional",s:"Jump",note:"Jump es synth-rock de fiesta, perfecto puntual."},
+{n:"The Rolling Stones",t:"Muy recomendable",c:7,m:"Pico",sd:"Ambos",g:"Rock",gen:"Transgeneracional",s:"Paint It Black",note:"Paint It Black oscura y coreable; groove atemporal."},
+{n:"The Beatles",t:"Solo en momentos",c:7,m:"Coreable",sd:"Canto",g:"Rock / Pop",gen:"Transgeneracional",s:"Come Together",note:"Come Together groove; los coros (Hey Jude) para cierre."},
+{n:"U2",t:"Muy recomendable",c:7,m:"Coreable",sd:"Canto",g:"Arena Rock",gen:"Transgeneracional",s:"With or Without You",note:"Coros de estadio; Where the Streets… para levantar."},
+{n:"Bon Jovi2",t:"—",c:0,m:"",sd:"",g:"",gen:"",s:"",note:""},
+/* --- EVITAR --- */
+{n:"Slayer",t:"Evitar",c:2,m:"—",sd:"Ninguno",g:"Thrash Metal",gen:"—",s:"—",note:"Demasiado extremo: corta conversación y vacía la barra."},
+{n:"Cannibal Corpse",t:"Evitar",c:1,m:"—",sd:"Ninguno",g:"Death Metal",gen:"—",s:"—",note:"Fuera del rango total de tu público."},
+{n:"Pantera",t:"Evitar",c:3,m:"—",sd:"Ninguno",g:"Groove Metal",gen:"—",s:"—",note:"Muy pesado; baja la energía del bar de golpe."},
+{n:"Meshuggah",t:"Evitar",c:1,m:"—",sd:"Ninguno",g:"Djent / Metal",gen:"—",s:"—",note:"Técnico y sin coro; nada que cantar."},
+{n:"Napalm Death",t:"Evitar",c:1,m:"—",sd:"Ninguno",g:"Grindcore",gen:"—",s:"—",note:"Impensable para conversación."},
+{n:"Burzum",t:"Evitar",c:1,m:"—",sd:"Ninguno",g:"Black Metal",gen:"—",s:"—",note:"Además de inapropiado, cero función de bar."},
+{n:"Gary Glitter",t:"Evitar",c:1,m:"—",sd:"Ninguno",g:"Glam Rock",gen:"—",s:"—",note:"Evitar por completo por el historial del artista, más allá de lo musical."},
+{n:"Lostprophets",t:"Evitar",c:1,m:"—",sd:"Ninguno",g:"Alt Metal",gen:"—",s:"—",note:"Evitar por el caso judicial de su vocalista."},
+{n:"Insane Clown Posse",t:"Evitar",c:1,m:"—",sd:"Ninguno",g:"Horrorcore",gen:"—",s:"—",note:"Nicho hostil; nada que aporte a la pista."},
+{n:"Ke$ha (dance pop)",t:"Evitar",c:3,m:"—",sd:"Baile",g:"Dance Pop",gen:"—",s:"—",note:"Se sale de la identidad rock; rompe el hilo estético."},
+{n:"Nickelback",t:"Solo en momentos",c:5,m:"Coreable",sd:"Canto",g:"Post-grunge",gen:"Millennial",s:"How You Remind Me",note:"Polariza: coreable pero puede leerse como cliché; úsalo con lectura de sala."},
+{n:"Creed",t:"Solo en momentos",c:5,m:"Coreable",sd:"Canto",g:"Post-grunge",gen:"Millennial",s:"Higher",note:"Revival irónico/TikTok; funciona como guiño, no como base."},
+{n:"Limp Bizkit",t:"Solo en momentos",c:5,m:"Pico",sd:"Canto",g:"Nu Metal",gen:"Millennial",s:"Rollin’",note:"Nostalgia meme; un tema en el pico, jamás bloque."},
+{n:"Korn",t:"Evitar",c:3,m:"—",sd:"Ninguno",g:"Nu Metal",gen:"Millennial",s:"—",note:"Demasiado pesado y oscuro para tu formato de conversación."},
+{n:"System of a Down",t:"Solo en momentos",c:5,m:"Pico",sd:"Canto",g:"Alt Metal",gen:"Millennial",s:"Toxicity",note:"Enorme nostalgia pero intenso: un pico puntual, con cuidado."}
+];
+
+/* ---- construir biblioteca: perfiles (compactados) + extras, sin placeholders vacíos ---- */
+function tierRank(t){return {"Imprescindible":0,"Muy recomendable":1,"Para probar":2,"Momentos":3,"Solo en momentos":3,"Evitar":4}[t] ?? 5;}
+function tierNorm(t){return t==="Solo en momentos"?"Momentos":t;}
+const seen = new Set();
+const LIB = [];
+PROFILES.forEach(p=>{
+  seen.add(p.n.toLowerCase());
+  LIB.push({n:p.n,t:tierNorm(p.tier),c:p.c,m:p.moment.split("—")[0].trim(),sd:p.sd,g:p.genre,gen:p.gen,s:p.must[0],note:"Ficha completa en Perfiles. Mezcla con "+p.mix.slice(0,2).join(", ")+"."});
+});
+EXTRA.forEach(e=>{
+  if(e.t==="—"||!e.n) return;               // saltar placeholders
+  if(seen.has(e.n.toLowerCase())) return;    // evitar duplicados con perfiles
+  seen.add(e.n.toLowerCase());
+  LIB.push({n:e.n,t:tierNorm(e.t),c:e.c,m:e.m,sd:e.sd,g:e.g,gen:e.gen,s:e.s,note:e.note});
+});
+
+/* ================= NAV ================= */
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));
+  t.classList.add('active');
+  document.getElementById(t.dataset.view).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}));
+
+/* ================= PERFILES render ================= */
+const tierClass={"Imprescindible":"t-imp","Muy recomendable":"t-muy","Para probar":"t-prob","Momentos":"t-mom","Solo en momentos":"t-mom","Evitar":"t-evit"};
+function riskClass(r){return r==="bajo"?"risk-bajo":r==="alto"?"risk-alto":"risk-medio";}
+function renderProfiles(filterTier,q){
+  const box=document.getElementById('pfCards');box.innerHTML='';
+  q=(q||'').toLowerCase();
+  const list=PROFILES.filter(p=>{
+    const tOk = filterTier==='all' || tierNorm(p.tier)===filterTier || (filterTier==='Momentos'&&p.tier==='Solo en momentos');
+    const qOk = !q || p.n.toLowerCase().includes(q) || p.genre.toLowerCase().includes(q) || p.must.join(' ').toLowerCase().includes(q);
+    return tOk&&qOk;
+  });
+  document.getElementById('pfEmpty').style.display = list.length? 'none':'block';
+  list.forEach(p=>{
+    const el=document.createElement('div');el.className='card';
+    el.innerHTML=`
+      <div class="top">
+        <div><div class="name">${p.n}</div><div class="genre">${p.genre}</div></div>
+        <div class="score">${p.c}<span class="max">/10</span></div>
+      </div>
+      <span class="tier-tag ${tierClass[p.tier]}">${p.tier}</span>
+      <div class="rows">
+        <div class="k">Imprescindibles</div><div class="v"><em>${p.must.join(' · ')}</em></div>
+        <div class="k">Joya escondida</div><div class="v">${p.gem}</div>
+        <div class="k">Momento</div><div class="v">${p.moment}</div>
+        <div class="k">Mezcla con</div><div class="v">${p.mix.join(', ')}</div>
+        <div class="k">Prob. Lima</div><div class="v">${p.lima}</div>
+      </div>
+      <div class="metaline">
+        <span class="pill risk-${p.risk==='bajo'?'bajo':p.risk==='alto'?'alto':'medio'}">Riesgo: <b>${p.risk}</b></span>
+        <span class="pill">Gen: <b>${p.gen}</b></span>
+        <span class="pill">${p.sd==='Canto'?'🎤 Más <b>canto</b>':p.sd==='Baile'?'💃 Más <b>baile</b>':'🎤💃 <b>Ambos</b>'}</span>
+      </div>`;
+    box.appendChild(el);
+  });
+}
+let pfTier='all';
+document.querySelectorAll('[data-pf]').forEach(c=>c.addEventListener('click',()=>{
+  document.querySelectorAll('[data-pf]').forEach(x=>x.classList.remove('on'));
+  c.classList.add('on');pfTier=c.dataset.pf;renderProfiles(pfTier,document.getElementById('pfSearch').value);
+}));
+document.getElementById('pfSearch').addEventListener('input',e=>renderProfiles(pfTier,e.target.value));
+renderProfiles('all','');
+
+/* ================= BIBLIOTECA render ================= */
+const momOrder=["Apertura","Construcción","Pico","Coreable","Cierre","Comodín"];
+// poblar selects
+const moments=[...new Set(LIB.map(x=>x.m).filter(Boolean))].sort((a,b)=>(momOrder.indexOf(a)+99*(momOrder.indexOf(a)<0))-(momOrder.indexOf(b)+99*(momOrder.indexOf(b)<0)));
+const genres=[...new Set(LIB.map(x=>x.g).filter(Boolean))].sort();
+const mSel=document.getElementById('libMoment');moments.forEach(m=>{const o=document.createElement('option');o.textContent=m;mSel.appendChild(o);});
+const gSel=document.getElementById('libGenre');genres.forEach(g=>{const o=document.createElement('option');o.textContent=g;gSel.appendChild(o);});
+
+let libTier='all', sortDesc=true;
+function dotColor(c){ if(c>=9)return'#f0b24a';if(c>=7)return'#ff8dbb';if(c>=5)return'#a98bff';if(c>=3)return'#5fa8d6';return'#c66';}
+function badgeClass(t){return tierClass[t]||'t-prob';}
+function sdClass(sd){return sd==='Canto'?'sd-canto':sd==='Baile'?'sd-baile':'sd-ambos';}
+
+function renderLib(){
+  const q=document.getElementById('libSearch').value.toLowerCase();
+  const fm=document.getElementById('libMoment').value;
+  const fsd=document.getElementById('libSD').value;
+  const fg=document.getElementById('libGenre').value;
+  let rows=LIB.filter(x=>{
+    const tOk=libTier==='all'||x.t===libTier;
+    const qOk=!q||x.n.toLowerCase().includes(q)||(x.s||'').toLowerCase().includes(q)||(x.g||'').toLowerCase().includes(q)||(x.note||'').toLowerCase().includes(q);
+    const mOk=!fm||x.m===fm;
+    const sdOk=!fsd||x.sd===fsd;
+    const gOk=!fg||x.g===fg;
+    return tOk&&qOk&&mOk&&sdOk&&gOk;
+  });
+  rows.sort((a,b)=>{
+    const tr=tierRank(a.t)-tierRank(b.t); if(tr!==0)return tr;
+    return sortDesc? b.c-a.c : a.c-b.c;
+  });
+  const body=document.getElementById('libBody');body.innerHTML='';
+  document.getElementById('libEmpty').style.display=rows.length?'none':'block';
+  rows.forEach((x,i)=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`
+      <td style="color:var(--muted2);font-family:var(--mono);font-size:12px">${i+1}</td>
+      <td class="artist">${x.n}</td>
+      <td><span class="dot" style="background:${dotColor(x.c)};color:#160b12">${x.c}</span></td>
+      <td><span class="badge ${badgeClass(x.t)}">${x.t}</span></td>
+      <td style="color:var(--muted)">${x.m||'—'}</td>
+      <td class="${sdClass(x.sd)}" style="font-family:var(--mono);font-size:11px">${x.sd||'—'}</td>
+      <td style="color:var(--muted);font-size:12px">${x.g||'—'}</td>
+      <td class="song">${x.s||'—'}</td>
+      <td style="color:var(--muted);font-size:12.5px;max-width:280px">${x.note||''}</td>`;
+    body.appendChild(tr);
+  });
+  document.getElementById('libCount').textContent=`${rows.length} artistas`;
+}
+document.querySelectorAll('#libTiers .chip').forEach(c=>c.addEventListener('click',()=>{
+  document.querySelectorAll('#libTiers .chip').forEach(x=>x.classList.remove('on'));
+  c.classList.add('on');libTier=c.dataset.tier;renderLib();
+}));
+['libSearch','libMoment','libSD','libGenre'].forEach(id=>document.getElementById(id).addEventListener('input',renderLib));
+document.getElementById('sortC').addEventListener('click',()=>{sortDesc=!sortDesc;document.getElementById('sortC').textContent='Compat '+(sortDesc?'▾':'▴');renderLib();});
+document.getElementById('libReset').addEventListener('click',()=>{
+  document.getElementById('libSearch').value='';document.getElementById('libMoment').value='';
+  document.getElementById('libSD').value='';document.getElementById('libGenre').value='';
+  document.querySelectorAll('#libTiers .chip').forEach(x=>x.classList.remove('on'));
+  document.querySelector('#libTiers .chip[data-tier="all"]').classList.add('on');libTier='all';renderLib();
+});
+renderLib();
+
+/* expose count of library for footer note */
+console.log('Biblioteca total:',LIB.length,'artistas');
+</script>
